@@ -1,0 +1,883 @@
+
+/* ============================================ */
+/*                 Core Variables               */
+/* ============================================ */
+
+/* Light Mode (Default) */
+:root {
+    --primary-dark: #ffffff;
+    --secondary-dark: #f8f8f8;
+    --tertiary-dark: #eeeeee;
+    --neon-green: #00b300;  /* Slightly darker green for better contrast on white */
+    --neon-green-dim: rgba(0, 179, 0, 0.3);
+    --neon-green-bright: #00cc00;
+    --text-light: #0a0a0a;  /* Dark text for light backgrounds */
+    --text-gray: #4a4a4a;
+    --text-dim: #6a6a6a;
+    --accent-red: #cc0000;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(0, 179, 0, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --primary-dark: #0a0a0a;
+    --secondary-dark: #1a1a1a;
+    --tertiary-dark: #2a2a2a;
+    --neon-green: #00ff00;
+    --neon-green-dim: rgba(0, 255, 0, 0.3);
+    --neon-green-bright: #39ff39;
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+    --text-dim: #999999;
+    --accent-red: #ff3333;
+    --card-bg: rgba(26, 26, 26, 0.9);
+    --border-color: rgba(0, 255, 0, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================ */
+/*              Pricing Section                 */
+/* ============================================ */
+
+.wwd-pricing-section {
+    padding: 6rem 0;
+    background: var(--primary-dark);
+    position: relative;
+    overflow: hidden;
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 30%, var(--neon-green-dim) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, var(--neon-green-dim) 0%, transparent 50%);
+        pointer-events: none;
+        opacity: 0.5;  /* More visible in light mode */
+    }
+}
+
+.wwd-pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+
+    .wwd-topper {
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--neon-green);
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 2rem;
+        background: rgba(0, 255, 0, 0.05);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            padding: 1px;
+            background: linear-gradient(45deg, var(--neon-green), transparent, var(--neon-green));
+            border-radius: inherit;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0.5;
+        }
+    }
+
+    .wwd-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        
+        background: linear-gradient(135deg, var(--text-light), var(--neon-green-bright));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .wwd-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-gray);
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        line-height: 1.6;
+    }
+}
+
+.wwd-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Light mode specific adjustments for cards */
+.wwd-pricing-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    
+    /* Add gradient border container */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 1rem;
+        padding: 2px;
+        background: linear-gradient(45deg, 
+            transparent 30%, 
+            var(--neon-green) 50%, 
+            transparent 70%);
+        mask: linear-gradient(#fff 0 0) content-box, 
+              linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        opacity: 0;
+        transform: rotate(0deg);
+        transition: opacity 0.3s ease;
+    }
+    
+    /* Flickering glow effect */
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -20px;
+        border-radius: 1rem;
+        background: radial-gradient(
+            circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+            var(--neon-green-dim), 
+            transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        border-color: transparent;
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.3),
+            0 0 30px var(--neon-green-dim);
+
+        &::before {
+            opacity: 1;
+            animation: rotate-gradient 3s linear infinite;
+        }
+        
+        &::after {
+            opacity: 0.5;
+            animation: flicker 0.15s infinite alternate;
+        }
+    }
+}
+
+/* Rotation animation for border */
+@keyframes rotate-gradient {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.wwd-pricing-card.wwd-featured {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 30px var(--neon-green-dim);
+    transform: scale(1.05);
+    
+    /* Always show subtle animation on featured */
+    &::before {
+        opacity: 0.3;
+        animation: rotate-gradient 6s linear infinite;
+    }
+    
+    &:hover {
+        transform: scale(1.05) translateY(-8px);
+        
+        &::before {
+            opacity: 1;
+            animation-duration: 2s;
+        }
+    }
+
+    .wwd-popular-badge {
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, var(--neon-green), var(--neon-green-bright));
+        color: var(--primary-dark);
+        font-weight: 700;
+        font-size: 0.875rem;
+        padding: 0.5rem 1.5rem;
+        border-radius: 0 0 1rem 1rem;
+        z-index: 5;
+        box-shadow: 0 4px 12px var(--neon-green-dim);
+        
+        /* Pulse animation */
+        animation: pulse-badge 2s ease-in-out infinite;
+    }
+}
+
+@keyframes pulse-badge {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+    }
+}
+
+.wwd-card-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background: var(--neon-green);
+        box-shadow: 0 0 10px var(--neon-green);
+    }
+
+    .wwd-package-name {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--text-light);
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+    }
+
+    .wwd-package-description {
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        opacity: 0.9;
+    }
+}
+
+.wwd-pricing-display {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    .wwd-price-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+
+        .wwd-currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--neon-green);
+            margin-right: 0.25rem;
+        }
+
+        .wwd-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--text-light);
+            line-height: 1;
+        }
+
+        .wwd-period {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-left: 0.5rem;
+        }
+    }
+
+    .wwd-original-price,
+    .wwd-setup-fee {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+
+        .wwd-strike {
+            text-decoration: line-through;
+            color: var(--text-dim);
+        }
+
+        .wwd-discount {
+            background: var(--accent-red);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .wwd-setup-text,
+        .wwd-starting {
+            color: var(--text-gray);
+        }
+    }
+}
+
+.wwd-features-list {
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding: 0;
+
+    .wwd-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+        color: var(--text-gray);
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .wwd-check {
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 2px var(--neon-green));
+        }
+    }
+}
+
+.wwd-cta-button {
+    width: 100%;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        /* Add corner accents */
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--neon-green);
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
+    
+    &::before {
+        top: -2px;
+        left: -2px;
+        border-right: none;
+        border-bottom: none;
+    }
+    
+    &::after {
+        bottom: -2px;
+        right: -2px;
+        border-left: none;
+        border-top: none;
+    }
+
+    &:hover {
+        border-color: var(--neon-green);
+        background: rgba(0, 255, 0, 0.05);
+        transform: translateY(-2px);
+        box-shadow: 
+            0 10px 20px rgba(0, 0, 0, 0.2),
+            0 0 20px var(--neon-green-dim);
+        
+        &::before,
+        &::after {
+            opacity: 1;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .wwd-button-text {
+            text-shadow: 0 0 8px var(--neon-green);
+        }
+    }
+
+    .wwd-button-text {
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+    }
+
+    .wwd-button-glow {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, var(--neon-green), var(--neon-green-bright));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        border-color: var(--neon-green);
+        box-shadow: 
+            0 0 20px rgba(0, 255, 0, 0.3),
+            inset 0 0 20px rgba(0, 255, 0, 0.1);
+        
+        .wwd-button-glow {
+            opacity: 0.1;
+            animation: pulse-glow 2s infinite;
+        }
+
+        .wwd-button-text {
+            color: var(--primary-dark);
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        body.dark-mode & {
+            box-shadow: 
+                0 0 20px rgba(0, 255, 0, 0.3),
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+                
+            .wwd-button-text {
+                color: var(--neon-green);
+            }
+        }
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+/* ============================================ */
+/*             Early Bird Notice               */
+/* ============================================ */
+
+.wwd-early-bird-notice {
+    margin-top: 4rem;
+    max-width: 1200px;  /* Add this - match your pricing grid max-width */
+    margin-left: auto;   /* Add this */
+    margin-right: auto;  /* Add this */
+    background: var(--card-bg);
+    border: 1px solid var(--neon-green);
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px var(--neon-green-dim);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, transparent, rgba(0, 255, 0, 0.03), transparent);
+    }
+
+    .wwd-notice-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .wwd-notice-icon {
+        flex-shrink: 0;
+        padding: 1rem;
+        background: rgba(0, 255, 0, 0.1);
+        border-radius: 50%;
+        border: 1px solid var(--border-color);
+
+        svg {
+            animation: rotate-star 4s linear infinite;
+        }
+    }
+
+    .wwd-notice-text {
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        body:not(.dark-mode) & {
+        background: linear-gradient(135deg, rgba(0, 179, 0, 0.05), rgba(0, 179, 0, 0.02));
+        // border: 2px solid var(--neon-green);
+    }
+    }
+}
+
+@keyframes rotate-star {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================ */
+/*                FAQ Section                   */
+/* ============================================ */
+
+.wwd-faq-section {
+    padding: 6rem 0;
+    background: var(--secondary-dark);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.02), transparent),
+            linear-gradient(0deg, transparent, rgba(0, 255, 0, 0.01), transparent);
+    }
+}
+
+.wwd-faq-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+
+    .wwd-topper {
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--neon-green);
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 2rem;
+        background: rgba(0, 255, 0, 0.05);
+    }
+
+    .wwd-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        color: var(--text-light);
+        margin: 0;
+        
+        background: linear-gradient(135deg, var(--text-light), var(--neon-green-bright));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+.wwd-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.wwd-faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px var(--shadow-color);
+
+    &:hover {
+        border-color: var(--shadow-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .wwd-faq-question {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        line-height: 1.4;
+
+        &::before {
+            content: '?';
+            display: inline-block;
+            color: var(--neon-green);
+            font-weight: 900;
+            margin-right: 0.5rem;
+            font-size: 1.2em;
+        }
+    }
+
+    .wwd-faq-answer {
+        color: var(--text-gray);
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+/* ============================================ */
+/*             Matrix Rain Effect              */
+/* ============================================ */
+
+.wwd-matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        width: 2px;
+        height: 100px;
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            var(--neon-green-dim),
+            var(--neon-green),
+            var(--neon-green-dim),
+            transparent
+        );
+        animation: matrix-fall 3s linear infinite;
+    }
+
+    &::before {
+        left: 20%;
+        animation-delay: -1s;
+    }
+
+    &::after {
+        right: 30%;
+        animation-delay: -2s;
+    }
+}
+
+@keyframes matrix-fall {
+    0% { transform: translateY(-100px); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(calc(100vh + 100px)); opacity: 0; }
+}
+
+/* ============================================ */
+/*            Responsive Adjustments           */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    .wwd-pricing-section {
+        padding: 4rem 0;
+    }
+
+    .wwd-pricing-card {
+        padding: 2rem 1.5rem;
+
+        &.wwd-featured {
+            transform: none;
+        }
+    }
+
+    .wwd-pricing-display .wwd-price-container .wwd-price {
+        font-size: 2.5rem;
+    }
+
+    .wwd-early-bird-notice {
+        margin-top: 3rem;
+        padding: 1.5rem;
+    }
+
+    .wwd-faq-section {
+        padding: 4rem 0;
+    }
+
+    .wwd-faq-item {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wwd-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .wwd-pricing-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .wwd-pricing-display .wwd-price-container .wwd-price {
+        font-size: 2rem;
+    }
+
+    .wwd-early-bird-notice {
+        padding: 1rem;
+    }
+}
+
+/* ============================================ */
+/*              Accessibility                   */
+/* ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .wwd-matrix-rain,
+    .wwd-button-glow {
+        animation: none !important;
+    }
+
+    .wwd-pricing-card {
+        transition: none;
+    }
+
+    .wwd-notice-icon svg {
+        animation: none;
+    }
+}
+
+/* ============================================ */
+/*              Focus States                    */
+/* ============================================ */
+
+.wwd-cta-button:focus-visible {
+    outline: 2px solid var(--neon-green);
+    outline-offset: 2px;
+}
+
+/* ============================================ */
+/*           High Contrast Support             */
+/* ============================================ */
+
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: rgba(0, 255, 0, 0.8);
+        --neon-green-dim: rgba(0, 255, 0, 0.6);
+    }
+
+    .wwd-pricing-card {
+        border-width: 2px;
+    }
+}
+
+/* Matrix rain effect adjustments */
+body:not(.dark-mode) {
+
+        .wwd-pricing-card {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        
+        &:hover {
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.15),
+                0 0 20px var(--neon-green-dim);
+        }
+    }
+    
+    .wwd-card-header {
+        &::after {
+            background: var(--neon-green);
+            box-shadow: 0 0 10px rgba(0, 179, 0, 0.5);
+        }
+    }
+    
+    .wwd-cta-button:hover {
+        background: var(--neon-green);
+        color: white;
+        
+        .wwd-button-text {
+            color: white;
+            text-shadow: none;
+        }
+    }
+
+    .wwd-title {
+        background: linear-gradient(135deg, var(--text-light), var(--neon-green));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .wwd-matrix-rain {
+        opacity: 0.1;  /* Much more subtle in light mode */
+        
+        &::before,
+        &::after {
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(0, 179, 0, 0.1),
+                rgba(0, 179, 0, 0.2),
+                rgba(0, 179, 0, 0.1),
+                transparent
+            );
+        }
+    }
+}

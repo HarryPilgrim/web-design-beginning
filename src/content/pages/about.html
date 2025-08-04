@@ -1,14 +1,13 @@
 ---
-title: "About | Code Stitch Web Designs"
-description: "Meta description for the page"
+title: "About | Wanderers Web Design"
+description: "Learn about our Northeast-based web design studio, our process, and how we bring complex functionality to local businesses."
 permalink: "/about/"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
     <link rel="stylesheet" href="/assets/css/about.css">
 {% endblock %}
 
@@ -23,86 +22,205 @@ permalink: "/about/"
             <span class="cs-int-title">About Us</span>
             <div class="cs-breadcrumbs">
                 <a href="/" class="cs-link">Home</a>
-                <a href="/about/" class="cs-link cs-active">About Us</a>
+                <a href="/about/" class="cs-link cs-active">About</a>
             </div>
         </div>
         <!--Background Image-->
         <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
-            <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
-            <!--Desktop Image-->
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/gstairs.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Northeast landscape" width="1920" height="482" loading="eager" decoding="async">
         </picture>
     </div>
 
     <!-- ============================================ -->
-    <!--                 Side By Side                 -->
+    <!--                About Section                 -->
     <!-- ============================================ -->
 
-    <section id="RPsbs-313">
+    <section id="about-content" class="wwd-about-section">
         <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-image-group">
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="lawyers" width="522" height="581" decoding="async">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" alt="gavel" width="390" height="376" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-content">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About CodeStitch</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-quote">
-                    <span class="cs-quote-text">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </span>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="/assets/svgs/quote.svg" alt="gavel" width="136" height="77">
+            <div class="wwd-about-content">
+                <!-- Left Content -->
+                <div class="wwd-about-text">
+                    <span class="wwd-topper">Local Web Design Excellence</span>
+
+                    <h2 class="wwd-title">Custom-Built Websites by a Local Developer</h2>
+                    <p class="wwd-text">
+                        I'm a North-East based web developer who believes local businesses deserve better than generic WordPress sites. After years of building advanced web applications, I've seen too many small businesses struggle with plugin-heavy sites that become slow, vulnerable, and expensive to maintain.
+                    </p>
+                    <p class="wwd-text">
+                        I take a different approach. Every site I build is coded from the ground up - no templates, no plugin dependencies, just clean, secure code that loads fast and works reliably. And unlike remote agencies, I'm right here in the community. I'd be happy to meet in person to discuss your project or even pop by while I'm working on your site. There's real value in working with someone local who understands your market and is invested in your success.
+                    </p>
+                     <!-- <h2 class="wwd-title">Bringing Complex Functionality to Northeast Businesses</h2> -->
+                    <!-- <p class="wwd-text">
+                        Based in the heart of the Northeast, I specialize in creating sophisticated web solutions that go beyond simple brochure sites. 
+                        With years of experience building complex, functionality-rich applications, I bring enterprise-level expertise to local businesses 
+                        that deserve more than cookie-cutter templates.
+                    </p>
+                    <p class="wwd-text">
+                        The Northeast's web design market is underserved when it comes to advanced functionality. While many agencies focus on basic sites, 
+                        I bridge the gap between simple web presence and powerful digital tools that actually drive business growth. From custom e-commerce 
+                        solutions to automated systems and interactive applications, I bring big-city tech capabilities with small-town service and attention.
+                    </p> -->
+                    <div class="wwd-stats">
+                        <div class="wwd-stat">
+                            <span class="wwd-stat-number">5+</span>
+                            <span class="wwd-stat-label">Projects Completed</span>
+                        </div>
+                        <div class="wwd-stat">
+                            <span class="wwd-stat-number">3+</span>
+                            <span class="wwd-stat-label">Years Experience</span>
+                        </div>
+                        <div class="wwd-stat">
+                            <span class="wwd-stat-number">100%</span>
+                            <span class="wwd-stat-label">Northeast Based</span>
+                        </div>
+                    </div>
                 </div>
-                <a href="/contact/" class="cs-button-solid">Get in Touch</a>
+                <!-- Right Image -->
+                <div class="wwd-about-image">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/coding-workspace.jpg" | resize({ width: 400, height: 500 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/coding-workspace.jpg" | resize({ width: 400, height: 500 }) | webp %}" type="image/webp">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/coding-workspace.jpg" | resize({ width: 400, height: 500 }) | jpeg %}" type="image/jpeg">
+                        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/coding-workspace.jpg" | resize({ width: 600, height: 700 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/coding-workspace.jpg" | resize({ width: 600, height: 700 }) | webp %}" type="image/webp">
+                        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/coding-workspace.jpg" | resize({ width: 600, height: 700 }) | jpeg %}" type="image/jpeg">
+                        <img src="{% getUrl "/assets/images/coding-workspace.jpg" | resize({ width: 600, height: 700 }) | jpeg %}" alt="Web development workspace" width="600" height="700" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="wwd-matrix-overlay"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    {% include 'sections/cta.html' %}
+    <!-- ============================================ -->
+    <!--              Process Section                 -->
+    <!-- ============================================ -->
+
+    <section id="process" class="wwd-process-section">
+        <div class="cs-container">
+            <div class="wwd-process-header">
+                <span class="wwd-topper">How We Work</span>
+                <h2 class="wwd-title">Our Development Process</h2>
+                <p class="wwd-subtitle">A streamlined approach to bring your vision to life</p>
+            </div>
+            
+            <div class="wwd-process-grid">
+                <!-- Step 1 -->
+                <div class="wwd-process-card" data-step="01">
+                    <div class="wwd-card-content">
+                        <div class="wwd-card-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 18H36M12 30H36M16 6L8 42L16 38L24 42L32 38L40 42L32 6" stroke="#0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="wwd-card-title">Discovery & Planning</h3>
+                        <p class="wwd-card-text">
+                            We start with a detailed questionnaire to understand your business, goals, and target audience. 
+                            This forms the foundation of a website that truly works for you.
+                        </p>
+                    </div>
+                    <div class="wwd-matrix-rain"></div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="wwd-process-card" data-step="02">
+                    <div class="wwd-card-content">
+                        <div class="wwd-card-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 10H42V38H6V10ZM6 18H42M14 6V10M34 6V10" stroke="#0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="wwd-card-title">Design & Approval</h3>
+                        <p class="wwd-card-text">
+                            Custom mockups are created based on your requirements. We work together to refine the design 
+                            until it perfectly represents your brand and meets your needs.
+                        </p>
+                    </div>
+                    <div class="wwd-matrix-rain"></div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="wwd-process-card" data-step="03">
+                    <div class="wwd-card-content">
+                        <div class="wwd-card-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 18L22 24L16 30M26 30H34" stroke="#0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="6" y="8" width="36" height="32" rx="2" stroke="#0F0" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="wwd-card-title">Development & Launch</h3>
+                        <p class="wwd-card-text">
+                            Your approved design comes to life with clean, efficient code. We handle everything from 
+                            responsive design to SEO optimization, ensuring a smooth launch.
+                        </p>
+                    </div>
+                    <div class="wwd-matrix-rain"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ============================================ -->
+<!--              Developer Section               -->
+<!-- ============================================ -->
+
+<section id="developer" class="wwd-developer-section">
+    <div class="cs-container">
+        <div class="wwd-developer-content">
+            <div class="wwd-developer-image">
+                <picture>
+                    <source srcset="{% getUrl "/assets/images/your-photo.jpg" | resize({ width: 400, height: 400 }) | avif %}" type="image/avif">
+                    <source srcset="{% getUrl "/assets/images/your-photo.jpg" | resize({ width: 400, height: 400 }) | webp %}" type="image/webp">
+                    <img src="{% getUrl "/assets/images/your-photo.jpg" | resize({ width: 400, height: 400 }) | jpeg %}" alt="Web Developer" width="400" height="400" loading="lazy" decoding="async">
+                </picture>
+                <div class="wwd-image-border"></div>
+            </div>
+            
+            <div class="wwd-developer-info">
+                <span class="wwd-topper">Meet the Developer</span>
+                <h2 class="wwd-title">Harry Crittenden</h2>
+                <p class="wwd-role">Full-Stack Web Developer</p>
+                <p class="wwd-text">
+                    Passionate about creating digital solutions that make a real difference for businesses. 
+                    When I'm not coding, you'll find me exploring the beautiful Northeast landscapes that 
+                    inspire my work.
+                </p>
+                <div class="wwd-social-links">
+                    <a href="https://www.linkedin.com/in/harold-crittenden-818870290/" target="_blank" rel="noopener" class="wwd-social-link" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/HarryPilgrim/" target="_blank" rel="noopener" class="wwd-social-link" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="wwd-social-link" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Include CTA section if you have one -->
+{% include 'sections/cta.html' %}
 
 {% endblock %}

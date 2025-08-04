@@ -1,0 +1,185 @@
+---
+title: "Portfolio | Wanderers Web Design"
+description: "Explore our portfolio of custom web design projects, from small business websites to complex web applications."
+permalink: "/portfolio/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="stylesheet" href="/assets/css/portfolio.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <span class="cs-int-title">Our Portfolio</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/portfolio/" class="cs-link cs-active">Portfolio</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="portfolio" width="1920" height="482" loading="eager" decoding="async">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--              Portfolio Project 1             -->
+    <!-- ============================================ -->
+
+    <section class="portfolio-project portfolio-left">
+        <div class="cs-container">
+            <div class="portfolio-content">
+                <!-- Computer Screen -->
+                <a href="https://www.poetryplatform.org" class="portfolio-computer-link" target="_blank" rel="noopener">
+                    <div class="portfolio-computer">
+                        <div class="portfolio-screen">
+                            <img src="/assets/images/portfolio/poetry-page.jpg" alt="Poetry Screenshot" loading="lazy">
+                        </div>
+                        <div class="portfolio-stand"></div>
+                        <div class="portfolio-base"></div>
+                    </div>
+                </a>
+                
+                <!-- Project Info -->
+                <div class="portfolio-info">
+                    <span class="portfolio-topper">Poetry Social Media site</span>
+                    <h2 class="portfolio-title">The Goodreads of Poetry</h2>
+                    <p class="portfolio-text">
+A secure social media site for poetry lovers with 400+ users. Visitors can read, share, favorite poems, follow others, and even generate new poetry using an AI model trained on the site’s content.
+                    </p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">AI</span>
+                    </div>
+                    <a href="https://www.poetryplatform.org" class="cs-button-solid" target="_blank" rel="noopener">
+                        Visit Website
+                        <svg class="portfolio-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Background decoration -->
+        <div class="portfolio-bg-accent"></div>
+    </section>
+
+<!-- ============================================ -->
+<!--              Portfolio Project 2             -->
+<!-- ============================================ -->
+
+<section class="portfolio-project portfolio-right">
+    <div class="cs-container">
+        <div class="portfolio-content">
+            <!-- Project Info -->
+            <div class="portfolio-info">
+                <span class="portfolio-topper">E-Commerce Solution</span>
+                <h2 class="portfolio-title">Modern Automated Online Store</h2>
+                <p class="portfolio-text">
+                    A fully automated e-commerce site that collects trending memes from platforms like Reddit and Twitter, prints them on t-shirts, and posts them to social media, including 
+                    <a href="https://bsky.app/profile/t-shirtmemes.bsky.social" target="_blank" rel="noopener noreferrer" style="color: #0F0;">Bluesky</a>. 
+                    It's a self-sustaining system combining content scraping, design automation, and targeted social promotion.
+                </p>
+                <div class="portfolio-tech"> <!-- Added this wrapper -->
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Shopify API</span>
+                    <span class="tech-tag">Social Media API</span>
+                    <span class="tech-tag">Automation</span>
+                </div>
+                <a href="https://www.tshirtmemes.org" class="cs-button-solid" target="_blank" rel="noopener">
+                    Visit Website
+                    <svg class="portfolio-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Computer Screen -->
+            <a href="https://www.tshirtmemes.org" class="portfolio-computer-link" target="_blank" rel="noopener">
+                <div class="portfolio-computer">
+                    <div class="portfolio-screen">
+                        <img src="/assets/images/portfolio/tshirt-page.jpg" alt="T-shirt shop Screenshot" loading="lazy">
+                    </div>
+                    <div class="portfolio-stand"></div>
+                    <div class="portfolio-base"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Background decoration -->
+    <div class="portfolio-bg-accent"></div>
+</section>
+
+    <!-- ============================================ -->
+    <!--              Portfolio Project 3             -->
+    <!-- ============================================ -->
+
+    <section class="portfolio-project portfolio-left">
+        <div class="cs-container">
+            <div class="portfolio-content">
+                <!-- Computer Screen -->
+                <a href="https://www.studymandarin.org" class="portfolio-computer-link" target="_blank" rel="noopener">
+                    <div class="portfolio-computer">
+                        <div class="portfolio-screen">
+                            <img src="/assets/images/portfolio/mandarin-page.jpg" alt="Mandarin Screenshot" loading="lazy">
+                        </div>
+                        <div class="portfolio-stand"></div>
+                        <div class="portfolio-base"></div>
+                    </div>
+                </a>
+                
+                <!-- Project Info -->
+                <div class="portfolio-info">
+                    <span class="portfolio-topper">Language Learning Chatbots</span>
+                    <h2 class="portfolio-title">AI Chatbots - study Chinese</h2>
+                    <p class="portfolio-text">
+ A work-in-progress language-learning platform. Users can chat with AI chatbots designed for different fluency levels (HSK A1–C2), save unknown vocabulary to a personal dictionary, and hover over Chinese text for instant translations.
+                    </p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Education Technology</span>
+                    </div>
+                    <a href="https://www.studymandarin.org" class="cs-button-solid" target="_blank" rel="noopener">
+                        Visit Website
+                        <svg class="portfolio-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Background decoration -->
+        <div class="portfolio-bg-accent"></div>
+    </section>
+
+          <script src="/assets/js/portfolio.js"></script>
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

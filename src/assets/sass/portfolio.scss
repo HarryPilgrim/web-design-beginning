@@ -1,0 +1,707 @@
+/* ============================================
+   Portfolio Page Styles
+   ============================================ */
+
+/* Portfolio Project Section */
+.portfolio-project {
+  padding: calc(100 / 16 * 1rem) 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  
+  &:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+}
+
+.portfolio-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(80 / 16 * 1rem);
+  align-items: center;
+}
+
+/* Grid order for alternating layouts */
+.portfolio-right {
+  .portfolio-info {
+    order: 1;
+  }
+  
+  .portfolio-computer-link {
+    order: 2;
+  }
+}
+
+/* Computer Screen Styling */
+.portfolio-computer-link {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+    
+    .portfolio-screen {
+      box-shadow: 0 calc(25 / 16 * 1rem) calc(70 / 16 * 1rem) rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.portfolio-computer {
+  position: relative;
+  max-width: calc(600 / 16 * 1rem);
+  margin: 0 auto;
+}
+
+.portfolio-screen {
+  background: #000;
+  border: calc(20 / 16 * 1rem) solid #333;
+  border-radius: calc(10 / 16 * 1rem);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 calc(20 / 16 * 1rem) calc(60 / 16 * 1rem) rgba(0, 0, 0, 0.3);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.portfolio-stand {
+  width: calc(100 / 16 * 1rem);
+  height: calc(60 / 16 * 1rem);
+  background: #333;
+  margin: 0 auto;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.portfolio-base {
+  width: calc(200 / 16 * 1rem);
+  height: calc(10 / 16 * 1rem);
+  background: #333;
+  margin: 0 auto;
+  border-radius: calc(5 / 16 * 1rem);
+}
+
+/* Project Info */
+.portfolio-info {
+  max-width: calc(500 / 16 * 1rem);
+}
+
+.portfolio-left .portfolio-info {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.portfolio-right .portfolio-info {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.portfolio-topper {
+  font-size: calc(14 / 16 * 1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  color: #00cc00;
+  font-weight: 600;
+  display: block;
+  margin-bottom: calc(10 / 16 * 1rem);
+}
+
+.portfolio-title {
+  font-size: calc(40 / 16 * 1rem);
+  color: #1a1a1a;
+  margin-bottom: calc(20 / 16 * 1rem);
+  line-height: 1.2;
+}
+
+.portfolio-text {
+  font-size: calc(18 / 16 * 1rem);
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: calc(20 / 16 * 1rem);
+}
+
+/* Tech Tags */
+.portfolio-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(10 / 16 * 1rem);
+  margin-bottom: calc(30 / 16 * 1rem);
+}
+
+.tech-tag {
+  background: rgba(0, 200, 0, 0.1);
+  color: #00cc00;
+  padding: calc(5 / 16 * 1rem) calc(15 / 16 * 1rem);
+  border-radius: calc(20 / 16 * 1rem);
+  font-size: calc(14 / 16 * 1rem);
+  border: 1px solid rgba(0, 200, 0, 0.3);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(0, 200, 0, 0.2);
+    border-color: #00cc00;
+  }
+}
+
+/* Visit Button with Arrow */
+.portfolio-project .cs-button-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(10 / 16 * 1rem);
+  transition: all 0.3s ease;
+}
+
+.portfolio-arrow {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-project .cs-button-solid:hover .portfolio-arrow {
+  transform: translateX(calc(5 / 16 * 1rem));
+}
+
+/* Background Accent */
+.portfolio-bg-accent {
+  position: absolute;
+  width: calc(500 / 16 * 1rem);
+  height: calc(500 / 16 * 1rem);
+  background: radial-gradient(circle, rgba(0, 200, 0, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.portfolio-left .portfolio-bg-accent {
+  top: 50%;
+  right: calc(-250 / 16 * 1rem);
+  transform: translateY(-50%);
+}
+
+.portfolio-right .portfolio-bg-accent {
+  top: 50%;
+  left: calc(-250 / 16 * 1rem);
+  transform: translateY(-50%);
+}
+
+/* Animation on Scroll */
+.portfolio-project {
+  opacity: 0;
+  transform: translateY(calc(30 / 16 * 1rem));
+  transition: all 0.8s ease;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  .portfolio-project {
+    background-color: #0a0a0a;
+    
+    &:nth-child(even) {
+      background-color: #111;
+    }
+  }
+  
+  .portfolio-title {
+    color: #fff;
+  }
+  
+  .portfolio-text {
+    color: #ccc;
+  }
+  
+  .portfolio-topper {
+    color: #00ff00;
+  }
+  
+  .portfolio-screen {
+    border-color: #222;
+    box-shadow: 0 calc(20 / 16 * 1rem) calc(60 / 16 * 1rem) rgba(0, 255, 0, 0.1);
+    
+    &::before {
+      background: linear-gradient(135deg, rgba(0, 255, 0, 0.05) 0%, transparent 50%);
+    }
+  }
+  
+  .portfolio-stand,
+  .portfolio-base {
+    background: #222;
+  }
+  
+  .tech-tag {
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    border-color: rgba(0, 255, 0, 0.3);
+    
+    &:hover {
+      background: rgba(0, 255, 0, 0.2);
+      border-color: #00ff00;
+    }
+  }
+  
+  .portfolio-bg-accent {
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.08) 0%, transparent 70%);
+  }
+  
+  .portfolio-computer-link:hover .portfolio-screen {
+    box-shadow: 0 calc(25 / 16 * 1rem) calc(70 / 16 * 1rem) rgba(0, 255, 0, 0.15);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 64rem) {
+  .portfolio-content {
+    grid-template-columns: 1fr;
+    gap: calc(50 / 16 * 1rem);
+  }
+  
+  .portfolio-right {
+    .portfolio-info,
+    .portfolio-computer-link {
+      order: initial;
+    }
+  }
+  
+  .portfolio-info {
+    max-width: calc(600 / 16 * 1rem);
+    margin: 0 auto !important;
+    text-align: center;
+  }
+  
+  .portfolio-tech {
+    justify-content: center;
+  }
+  
+  .portfolio-computer {
+    max-width: calc(500 / 16 * 1rem);
+  }
+  
+  .portfolio-title {
+    font-size: calc(32 / 16 * 1rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  .portfolio-project {
+    padding: calc(60 / 16 * 1rem) 0;
+  }
+  
+  .portfolio-computer {
+    max-width: calc(400 / 16 * 1rem);
+  }
+  
+  .portfolio-screen {
+    border-width: calc(15 / 16 * 1rem);
+  }
+  
+  .portfolio-title {
+    font-size: calc(28 / 16 * 1rem);
+  }
+  
+  .portfolio-text {
+    font-size: calc(16 / 16 * 1rem);
+  }
+  
+  .portfolio-bg-accent {
+    width: calc(300 / 16 * 1rem);
+    height: calc(300 / 16 * 1rem);
+  }
+  
+  .portfolio-left .portfolio-bg-accent {
+    right: calc(-150 / 16 * 1rem);
+  }
+  
+  .portfolio-right .portfolio-bg-accent {
+    left: calc(-150 / 16 * 1rem);
+  }
+}
+
+@media (max-width: 30rem) {
+  .portfolio-computer {
+    max-width: 100%;
+  }
+  
+  .portfolio-screen {
+    border-width: calc(10 / 16 * 1rem);
+    border-radius: calc(8 / 16 * 1rem);
+  }
+  
+  .portfolio-stand {
+    width: calc(60 / 16 * 1rem);
+    height: calc(40 / 16 * 1rem);
+  }
+  
+  .portfolio-base {
+    width: calc(120 / 16 * 1rem);
+    height: calc(6 / 16 * 1rem);
+  }
+  
+  .portfolio-title {
+    font-size: calc(24 / 16 * 1rem);
+  }
+  
+  .tech-tag {
+    font-size: calc(12 / 16 * 1rem);
+    padding: calc(4 / 16 * 1rem) calc(12 / 16 * 1rem);
+  }
+  
+  .portfolio-content {
+    gap: calc(30 / 16 * 1rem);
+  }
+}
+
+// /* ============================================
+//    Portfolio Page Styles
+//    ============================================ */
+
+// /* Portfolio Project Section */
+// .portfolio-project {
+//   padding: 100px 0;
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .portfolio-project:nth-child(even) {
+//   background-color: #f8f8f8;
+// }
+
+// .portfolio-content {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 80px;
+//   align-items: center;
+// }
+
+// /* Remove the direction rtl approach - it causes issues */
+// /* Instead, use grid order */
+// .portfolio-right .portfolio-info {
+//   order: 1;
+// }
+
+// .portfolio-right .portfolio-computer-link {
+//   order: 2;
+// }
+
+// /* Computer Screen Styling */
+// .portfolio-computer-link {
+//   display: block;
+//   text-decoration: none;
+//   transition: transform 0.3s ease;
+// }
+
+// .portfolio-computer-link:hover {
+//   transform: scale(1.02);
+// }
+
+// .portfolio-computer {
+//   position: relative;
+//   max-width: 600px;
+//   margin: 0 auto;
+// }
+
+// .portfolio-screen {
+//   background: #000;
+//   border: 20px solid #333;
+//   border-radius: 10px;
+//   overflow: hidden;
+//   position: relative;
+//   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+// }
+
+// .portfolio-screen::before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+//   pointer-events: none;
+//   z-index: 1;
+// }
+
+// .portfolio-screen img {
+//   width: 100%;
+//   height: auto;
+//   display: block;
+// }
+
+// .portfolio-stand {
+//   width: 100px;
+//   height: 60px;
+//   background: #333;
+//   margin: 0 auto;
+//   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+// }
+
+// .portfolio-base {
+//   width: 200px;
+//   height: 10px;
+//   background: #333;
+//   margin: 0 auto;
+//   border-radius: 5px;
+// }
+
+// /* Project Info */
+// .portfolio-info {
+//   max-width: 500px;
+// }
+
+// /* Ensure proper alignment for left projects */
+// .portfolio-left .portfolio-info {
+//   margin-left: 0;
+//   margin-right: auto;
+// }
+
+// /* Ensure proper alignment for right projects */
+// .portfolio-right .portfolio-info {
+//   margin-left: auto;
+//   margin-right: 0;
+// }
+
+// .portfolio-topper {
+//   font-size: 14px;
+//   text-transform: uppercase;
+//   letter-spacing: 2px;
+//   color: #0F0;
+//   font-weight: 600;
+//   display: block;
+//   margin-bottom: 10px;
+// }
+
+// .portfolio-title {
+//   font-size: 2.5rem;
+//   color: #1a1a1a;
+//   margin-bottom: 20px;
+//   line-height: 1.2;
+// }
+
+// .portfolio-text {
+//   font-size: 18px;
+//   line-height: 1.6;
+//   color: #666;
+//   margin-bottom: 20px;
+// }
+
+// /* Tech Tags */
+// .portfolio-tech {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 10px;
+//   margin-bottom: 30px;
+// }
+
+// .tech-tag {
+//   background: rgba(0, 255, 0, 0.1);
+//   color: #0F0;
+//   padding: 5px 15px;
+//   border-radius: 20px;
+//   font-size: 14px;
+//   border: 1px solid rgba(0, 255, 0, 0.3);
+//   transition: all 0.3s ease;
+// }
+
+// .tech-tag:hover {
+//   background: rgba(0, 255, 0, 0.2);
+//   border-color: #0F0;
+// }
+
+// /* Visit Button with Arrow */
+// .portfolio-project .cs-button-solid {
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 10px;
+//   transition: all 0.3s ease;
+// }
+
+// .portfolio-arrow {
+//   transition: transform 0.3s ease;
+// }
+
+// .portfolio-project .cs-button-solid:hover .portfolio-arrow {
+//   transform: translateX(5px);
+// }
+
+// /* Background Accent */
+// .portfolio-bg-accent {
+//   position: absolute;
+//   width: 500px;
+//   height: 500px;
+//   background: radial-gradient(circle, rgba(0, 255, 0, 0.05) 0%, transparent 70%);
+//   border-radius: 50%;
+//   pointer-events: none;
+// }
+
+// .portfolio-left .portfolio-bg-accent {
+//   top: 50%;
+//   right: -250px;
+//   transform: translateY(-50%);
+// }
+
+// .portfolio-right .portfolio-bg-accent {
+//   top: 50%;
+//   left: -250px;
+//   transform: translateY(-50%);
+// }
+
+// /* Dark Theme for Odd Sections */
+// .portfolio-project:nth-child(odd) {
+//   background-color: #0a0a0a;
+//   color: #fff;
+// }
+
+// .portfolio-project:nth-child(odd) .portfolio-title {
+//   color: #fff;
+// }
+
+// .portfolio-project:nth-child(odd) .portfolio-text {
+//   color: #aaa;
+// }
+
+// .portfolio-project:nth-child(odd) .portfolio-screen {
+//   border-color: #222;
+//   box-shadow: 0 20px 60px rgba(0, 255, 0, 0.1);
+// }
+
+// .portfolio-project:nth-child(odd) .portfolio-stand,
+// .portfolio-project:nth-child(odd) .portfolio-base {
+//   background: #222;
+// }
+
+// /* Responsive Design */
+// @media (max-width: 1024px) {
+//   .portfolio-content {
+//     grid-template-columns: 1fr;
+//     gap: 50px;
+//   }
+  
+//   /* Reset order for mobile */
+//   .portfolio-right .portfolio-info,
+//   .portfolio-right .portfolio-computer-link {
+//     order: initial;
+//   }
+  
+//   .portfolio-info {
+//     max-width: 600px;
+//     margin: 0 auto !important;
+//     text-align: center;
+//   }
+  
+//   .portfolio-tech {
+//     justify-content: center;
+//   }
+  
+//   .portfolio-computer {
+//     max-width: 500px;
+//   }
+  
+//   .portfolio-title {
+//     font-size: 2rem;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .portfolio-project {
+//     padding: 60px 0;
+//   }
+  
+//   .portfolio-computer {
+//     max-width: 400px;
+//   }
+  
+//   .portfolio-screen {
+//     border-width: 15px;
+//   }
+  
+//   .portfolio-title {
+//     font-size: 1.75rem;
+//   }
+  
+//   .portfolio-text {
+//     font-size: 16px;
+//   }
+  
+//   .portfolio-bg-accent {
+//     width: 300px;
+//     height: 300px;
+//   }
+  
+//   .portfolio-left .portfolio-bg-accent {
+//     right: -150px;
+//   }
+  
+//   .portfolio-right .portfolio-bg-accent {
+//     left: -150px;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .portfolio-computer {
+//     max-width: 100%;
+//   }
+  
+//   .portfolio-screen {
+//     border-width: 10px;
+//     border-radius: 8px;
+//   }
+  
+//   .portfolio-stand {
+//     width: 60px;
+//     height: 40px;
+//   }
+  
+//   .portfolio-base {
+//     width: 120px;
+//     height: 6px;
+//   }
+  
+//   .portfolio-title {
+//     font-size: 1.5rem;
+//   }
+  
+//   .tech-tag {
+//     font-size: 12px;
+//     padding: 4px 12px;
+//   }
+  
+//   .portfolio-content {
+//     gap: 30px;
+//   }
+// }
+
+// /* Animation on Scroll */
+// .portfolio-project {
+//   opacity: 0;
+//   transform: translateY(30px);
+//   transition: all 0.8s ease;
+// }
+
+// .portfolio-project.visible {
+//   opacity: 1;
+//   transform: translateY(0);
+// }
+
+// /* Add subtle hover effect to computer screens */
+// .portfolio-computer-link:hover .portfolio-screen {
+//   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+// }
+
+// .portfolio-project:nth-child(odd) .portfolio-computer-link:hover .portfolio-screen {
+//   box-shadow: 0 25px 70px rgba(0, 255, 0, 0.15);
+// }

@@ -1,6 +1,6 @@
 ---
-title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
-description: "Meta description for the page"
+title: "Ornately Crafted Websites | Neon Flow Web Designs | Darlington, UK"
+description: "freelance Web designer based in the North-East of England, creating websites that are fast, responsive, and look good"
 permalink: "/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
@@ -10,6 +10,15 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 {% block head %}
     <!-- Critical styles are loaded first -->
     <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+
+        <!-- Interactive Hero Styles -->
+    <link rel="stylesheet" href="/assets/css/wwd-matrix-reveal.css"/>
+
+        <!-- web page assembly  -->
+    <link rel="stylesheet" href="/assets/css/wwd-website-assembly.css"/>
+
+    <link rel="stylesheet" href="/assets/css/about.css">
 
     <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
     {% if kit.isProduction %}
@@ -25,7 +34,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
     <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
     <!-- {% include "components/home-schema.html" %} -->
-{% endblock %}
+{% endblock %}f
 
 {% block body %}
 
@@ -33,43 +42,92 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <!--                    Hero                      -->
     <!-- ============================================ -->
 
-    <section id="hero-143">
-        <div class="cs-container">
-            <span class="cs-topper">CodeStitch Presents</span>
-            <h1 class="cs-title">The Intermediate Website Kit (SASS)</h1>
+
+
+<section id="hero-143" class="wwd-hero-interactive">
+    <div class="cs-container">
+        <span class="cs-topper">Welcome to the Digital Universe</span>
+        <h1 class="cs-title">Neon Flow Web Design</h1>
+        <p class="cs-text">
+            We craft sleek digital experiences that launch your business into new dimensions. Modern, responsive, and out-of-this-world web solutions.
+        </p>
+        <a href="/contact/" class="cs-button-solid">Start Your Journey</a>
+    </div>
+
+    <!-- Interactive Layer -->
+    <div class="wwd-interactive-layer">
+        <div class="wwd-cursor-glow"></div>
+        <div class="wwd-sparks-container"></div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 640, height: 1490 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 640, height: 1490 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 640, height: 1490 }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
+        <!--Large Tablet Image-->
+        <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 1920, height: 1080 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 1920, height: 1080 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 1920, height: 1080 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/star-and-trees.jpg" | resize({ width: 1920, height: 1080 }) | jpeg %}" alt="Starry night sky with trees" width="1920" height="1080" loading="eager" decoding="async">
+    </picture>
+</section>
+
+<!-- ============================================ -->
+<!--                   Services                   -->
+<!-- ============================================ -->
+
+<section id="h-services-143">
+    <ul class="cs-card-group">
+        <li class="cs-item">
+            <picture class="cs-icon">
+                <img loading="lazy" decoding="async" src="/assets/svgs/code-icon.svg" alt="icon" width="52" height="52" aria-hidden="true">
+            </picture>
+            <h2 class="cs-title">Lightning Fast Code</h2>
             <p class="cs-text">
-                Building faster websites, faster. Just clone, update _data/client.js, swap out some sections, and away you go!
+                Hand-coded sites with no WordPress bloat. Load in under 3 seconds or lose customers.
             </p>
-            <a href="/contact/" class="cs-button-solid">Get in Touch</a>
-        </div>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-icon">
+                <img loading="lazy" decoding="async" src="/assets/svgs/mobile-icon.svg" alt="icon" width="52" height="52" aria-hidden="true">
+            </picture>
+            <h2 class="cs-title">Mobile-First Design</h2>
+            <p class="cs-text">
+                Responsive layouts that work flawlessly on every device. Your customers are mobile.
+            </p>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-icon">
+                <img loading="lazy" decoding="async" src="/assets/svgs/clock-icon.svg" alt="icon" width="52" height="52" aria-hidden="true">
+            </picture>
+            <h2 class="cs-title">24/7 Sales Machine</h2>
+            <p class="cs-text">
+                Your website never sleeps. Capture leads and make sales around the clock.
+            </p>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-icon">
+                <img loading="lazy" decoding="async" src="/assets/svgs/location-icon.svg" alt="icon" width="52" height="52" aria-hidden="true">
+            </picture>
+            <h2 class="cs-title">Northeast Local</h2>
+            <p class="cs-text">
+                Supporting local businesses with a developer who understands the Northeast market.
+            </p>
+        </li>
+    </ul>
+</section>
 
-        <!-- Background Image -->
-        <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | jpeg %}" type="image/jpeg">
-            <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
-            <!--Large Tablet Image-->
-            <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
-            <!--Desktop Image-->
-            <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | jpeg %}" alt="kitchen" width="1" height="1" loading="eager" decoding="async">
-        </picture>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Services                   -->
-    <!-- ============================================ -->
-
-    <section id="h-services-143">
+    <!-- <section id="h-services-143">
         <ul class="cs-card-group">
             <li class="cs-item">
                 <picture class="cs-icon">
@@ -108,7 +166,291 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 </p>
             </li>
         </ul>
-    </section>
+    </section> -->
+
+
+<!-- ============================================ -->
+<!--                   website assembly                -->
+<!-- ============================================ -->
+
+<section id="website-assembly" class="wwd-assembly-section">
+    <div class="cs-container">
+        <div class="wwd-assembly-content">
+            <div class="wwd-assembly-text">
+                <h2 class="wwd-assembly-title">
+                    <span class="wwd-typing-text">We build your website</span>
+                    <span class="wwd-typing-cursor">|</span>
+                </h2>
+                <p class="wwd-assembly-subtitle">letter by letter, pixel by pixel</p>
+                <br>
+                <p class="wwd-assembly-subtitle">Businesses with websites see 15-50% more growth. Don't let slow, bloated sites cost you customers.</p>
+            </div>
+            
+            <div class="wwd-computer-container">
+                <!-- Computer Frame (Desktop) -->
+                <div class="wwd-computer-frame">
+                    <div class="wwd-computer-screen">
+                        <!-- Matrix Stream Background -->
+                        <canvas class="wwd-assembly-matrix"></canvas>
+                        
+                        <!-- Website Parts Container -->
+                        <div class="wwd-website-preview">
+                            <!-- Navbar -->
+                            <div class="wwd-part wwd-navbar" data-animate="left">
+                                <div class="wwd-navbar-logo">Logo</div>
+                                <div class="wwd-navbar-menu">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Hero Title -->
+                            <div class="wwd-part wwd-hero-title" data-animate="right">
+                                <h1 style="color: #333333 !important;">Your Amazing Website</h1>
+                                <p style="color: #666666 !important;">Crafted with precision</p>
+                            </div>
+                            
+                            <!-- Sidebar -->
+                            <div class="wwd-part wwd-sidebar" data-animate="right">
+                                <div class="wwd-sidebar-item"></div>
+                                <div class="wwd-sidebar-item"></div>
+                                <div class="wwd-sidebar-item"></div>
+                            </div>
+                            
+                            <!-- Content Blocks -->
+                            <div class="wwd-part wwd-content-1" data-animate="left">
+                                <div class="wwd-content-box"></div>
+                            </div>
+                            
+                            <div class="wwd-part wwd-content-2" data-animate="left">
+                                <div class="wwd-content-box"></div>
+                            </div>
+                            
+                            <!-- Footer -->
+                            <div class="wwd-part wwd-footer" data-animate="bottom">
+                                <div class="wwd-footer-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Computer Stand -->
+                    <div class="wwd-computer-stand"></div>
+                    <div class="wwd-computer-base"></div>
+                </div>
+                
+                <!-- Mobile Version (hidden on desktop, shown on mobile) -->
+                <div class="wwd-mobile-screen" style="display: none;">
+                    <div class="wwd-mobile-preview">
+                        <!-- Mobile particles effect -->
+                        <div class="wwd-mobile-particles"></div>
+                        
+                        <!-- Mobile navbar -->
+                        <div class="wwd-mobile-part wwd-mobile-navbar">
+                            <div style="font-weight: bold; color: #333;">Your App</div>
+                        </div>
+                        
+                        <!-- Mobile content -->
+                        <div class="wwd-mobile-part wwd-mobile-content"></div>
+                        
+                        <!-- Mobile cards -->
+                        <div class="wwd-mobile-part wwd-mobile-cards">
+                            <div class="wwd-mobile-card"></div>
+                            <div class="wwd-mobile-card"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================ -->
+<!--              Developer Section               -->
+<!-- ============================================ -->
+
+<section id="developer" class="wwd-developer-section">
+    <div class="cs-container">
+        <div class="wwd-developer-content">
+            <div class="wwd-developer-image">
+                <picture>
+                    <source srcset="{% getUrl "/assets/images/your-photo.jpg" | resize({ width: 400, height: 400 }) | avif %}" type="image/avif">
+                    <source srcset="{% getUrl "/assets/images/your-photo.jpg" | resize({ width: 400, height: 400 }) | webp %}" type="image/webp">
+                    <img src="{% getUrl "/assets/images/your-photo.jpg" | resize({ width: 400, height: 400 }) | jpeg %}" alt="Web Developer" width="400" height="400" loading="lazy" decoding="async">
+                </picture>
+                <div class="wwd-image-border"></div>
+            </div>
+            
+            <div class="wwd-developer-info">
+                <span class="wwd-topper">Meet the Developer</span>
+                <h2 class="wwd-title">Harry Crittenden</h2>
+                <p class="wwd-role">Full-Stack Web Developer</p>
+                <p class="wwd-text">
+            Building social media platforms and automated ecommerce shops means I have serious experience 
+            putting sites together. Creating clean, professional websites like this is second nature to me - 
+            no broken buttons, unreadable text, or template shortcuts that leave your visitors frustrated.
+                    <br>
+                    <br>
+            Too many design agencies leave small businesses with broken promises and worse websites. I'm here 
+            to build long-term partnerships, helping your business grow with reliable websites and support 
+            you can actually count on.
+                </p>
+                <div class="wwd-social-links">
+                    <a href="https://www.linkedin.com/in/harold-crittenden-818870290/" target="_blank" rel="noopener" class="wwd-social-link" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/HarryPilgrim/" target="_blank" rel="noopener" class="wwd-social-link" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="wwd-social-link" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="m2 6 10 8 10-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Service Highlights Cards -->
+        <div class="wwd-service-highlights">
+            <div class="wwd-highlight-card" data-step="01">
+                <div class="wwd-matrix-rain"></div>
+                <div class="wwd-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="wwd-card-title">100% Secure</h3>
+                <p class="wwd-card-text">Static HTML/CSS/JavaScript code means there's literally nothing that can be hacked.</p>
+            </div>
+            
+            <div class="wwd-highlight-card" data-step="02">
+                <div class="wwd-matrix-rain"></div>
+                <div class="wwd-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="wwd-card-title">Lightning Fast</h3>
+                <p class="wwd-card-text">Perfect 95+/100 speed scores with zero bloat and purpose-built code.</p>
+            </div>
+            
+            <div class="wwd-highlight-card" data-step="03">
+                <div class="wwd-matrix-rain"></div>
+                <div class="wwd-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="wwd-card-title">Custom Designed</h3>
+                <p class="wwd-card-text">Every design is crafted specifically for your business - no templates, no compromises.</p>
+            </div>
+            
+            <div class="wwd-highlight-card" data-step="04">
+                <div class="wwd-matrix-rain"></div>
+                <div class="wwd-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="wwd-card-title">Direct Support</h3>
+                <p class="wwd-card-text">Email, Call or text me directly - no phone trees, no robots, just real human support.</p>
+            </div>
+        </div>
+        
+        <!-- About Page Link -->
+        <div class="wwd-about-link">
+            <a href="/about" class="wwd-link-button">
+                Learn More About My Story
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12h14m-7-7 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================ -->
+<!--            Portfolio Preview                 -->
+<!-- ============================================ -->
+
+<section id="portfolio-preview" class="wwd-portfolio-preview">
+    <div class="cs-container">
+        <div class="wwd-portfolio-header">
+            <span class="wwd-topper">Featured Project</span>
+            <h2 class="wwd-title">Building Complex Platforms</h2>
+            <p class="wwd-subtitle">
+                From concept to launch, I create full-scale applications that handle real users and real data
+            </p>
+        </div>
+
+        <!-- Reuse your existing portfolio project HTML -->
+        <div class="portfolio-project portfolio-left">
+            <div class="portfolio-content">
+                <!-- Computer Screen -->
+                <a href="https://www.poetryplatform.org" class="portfolio-computer-link" target="_blank" rel="noopener">
+                    <div class="portfolio-computer">
+                        <div class="portfolio-screen">
+                            <img src="/assets/images/portfolio/poetry-page.jpg" alt="Poetry Screenshot" loading="lazy">
+                        </div>
+                        <div class="portfolio-stand"></div>
+                        <div class="portfolio-base"></div>
+                    </div>
+                </a>
+                
+                <!-- Project Info -->
+                <div class="portfolio-info">
+                    <span class="portfolio-topper">Poetry Social Media Platform</span>
+                    <h3 class="portfolio-title">The Goodreads of Poetry</h3>
+                    <p class="portfolio-text">
+                        A complete social media platform built from scratch with 400+ active users. I designed 
+                        the entire user experience, built secure authentication, implemented real-time features, 
+                        and even trained an AI model on the platform's content to generate new poetry. 
+                        This isn't just a website - it's a full-scale application handling user data, 
+                        social interactions, and content management at scale.
+                    </p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                    <div class="portfolio-buttons">
+                        <a href="https://www.poetryplatform.org" class="cs-button-solid" target="_blank" rel="noopener">
+                            Visit Live Site
+                            <svg class="portfolio-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link to Full Portfolio -->
+        <div class="wwd-portfolio-link">
+            <a href="/portfolio" class="wwd-link-button">
+                View All Projects
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12h14m-7-7 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
 
     <!-- ============================================ -->
     <!--                 Side By Side                 -->
@@ -439,6 +781,10 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <a href="/reviews/" class="cs-button-solid">Read All Reviews</a>
         </div>
     </section>
+
+        <!-- Load interactive script at the end of body -->
+    <script src="/assets/js/wwd-matrix-reveal.js"></script>
+      <script src="/assets/js/wwd-website-assembly.js"></script>
 
     {% include 'sections/cta.html' %}
 {% endblock %}

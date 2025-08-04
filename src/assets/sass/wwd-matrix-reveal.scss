@@ -1,0 +1,202 @@
+/* ============================================
+   Wanderers Web Design - Matrix Reveal Effect
+   ============================================ */
+
+/* Hide cursor when over hero */
+.wwd-hero-interactive.wwd-hide-cursor {
+  cursor: none;
+}
+
+/* Matrix Wrapper - handles the reveal mask */
+.wwd-matrix-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Above background, below content */
+  pointer-events: none; /* Allow clicks through */
+  /* Start with matrix hidden */
+  mask-image: radial-gradient(circle at 0 0, transparent 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 0 0, transparent 0%, transparent 100%);
+  /* Remove transition for instant response */
+}
+
+/* Matrix Container */
+.wwd-matrix-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Matrix Canvas */
+.wwd-matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Small Green Dot Cursor */
+.wwd-matrix-glow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0F0;
+  box-shadow: 
+    0 0 10px #0F0,
+    0 0 20px #0F0,
+    0 0 30px #0F0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10; /* Above everything */
+}
+
+.wwd-matrix-glow.active {
+  opacity: 0.9;
+}
+
+/* Ensure proper layering */
+.wwd-hero-interactive {
+  position: relative;
+}
+
+/* Background image stays at bottom */
+.wwd-hero-interactive .cs-background {
+  position: relative;
+  z-index: 0;
+}
+
+/* Content stays on top */
+.wwd-hero-interactive .cs-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide original effects when matrix is active */
+.wwd-matrix-active .wwd-cursor-glow {
+  display: none;
+}
+
+.wwd-matrix-active .wwd-interactive-layer {
+  z-index: 2;
+  pointer-events: auto; /* Re-enable for mouse tracking */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wwd-matrix-wrapper {
+    /* Disable on mobile for performance */
+    display: none;
+  }
+  
+  .wwd-hero-interactive.wwd-hide-cursor {
+    cursor: auto; /* Keep cursor on mobile */
+  }
+}
+
+// /* ============================================
+//    Wanderers Web Design - Matrix Reveal Effect
+//    ============================================ */
+
+// /* Matrix Wrapper - handles the reveal mask */
+// .wwd-matrix-wrapper {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 1; /* Above background, below content */
+//   pointer-events: none; /* Allow clicks through */
+//   /* Start with matrix hidden */
+//   mask-image: radial-gradient(circle at 0 0, transparent 0%, transparent 100%);
+//   -webkit-mask-image: radial-gradient(circle at 0 0, transparent 0%, transparent 100%);
+// }
+
+// /* Matrix Container */
+// .wwd-matrix-container {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: #000;
+//   overflow: hidden;
+// }
+
+// /* Matrix Canvas */
+// .wwd-matrix-canvas {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   font-family: 'Courier New', Courier, monospace;
+// }
+
+// /* Soft Glow Effect */
+// .wwd-matrix-glow {
+//   position: absolute;
+//   width: 20px;
+//   height: 20px;
+//   border-radius: 50%;
+//   background: radial-gradient(
+//     circle,
+//     rgba(0, 255, 0, 0.3) 0%,
+//     rgba(0, 255, 0, 0.1) 40%,
+//     transparent 100%
+//   );
+//   filter: blur(10px);
+//   transform: translate(-50%, -50%);
+//   pointer-events: none;
+//   opacity: 0;
+//   transition: opacity 0.2s ease;
+// }
+
+// .wwd-matrix-glow.active {
+//   opacity: 1;
+// }
+
+// /* Ensure proper layering */
+// .wwd-hero-interactive {
+//   position: relative;
+// }
+
+// /* Background image stays at bottom */
+// .wwd-hero-interactive .cs-background {
+//   position: relative;
+//   z-index: 0;
+// }
+
+// /* Content stays on top */
+// .wwd-hero-interactive .cs-container {
+//   position: relative;
+//   z-index: 2;
+// }
+
+// /* Hide original effects when matrix is active */
+// .wwd-matrix-active .wwd-cursor-glow {
+//   display: none;
+// }
+
+// .wwd-matrix-active .wwd-interactive-layer {
+//   z-index: 2;
+//   pointer-events: auto; /* Re-enable for mouse tracking */
+// }
+
+// /* Responsive adjustments */
+// @media (max-width: 768px) {
+//   .wwd-matrix-wrapper {
+//     /* Disable on mobile for performance */
+//     display: none;
+//   }
+// }

@@ -1,0 +1,860 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// WHY NEW WEBSITE PAGE STYLES
+// ─────────────────────────────────────────────────────────────────────────────
+
+/* Light Mode (Default) */
+:root {
+    --primary-dark: #ffffff;
+    --secondary-dark: #f8f8f8;
+    --tertiary-dark: #eeeeee;
+    --neon-green: #00b300;  /* Slightly darker green for better contrast on white */
+    --neon-green-dim: rgba(0, 179, 0, 0.3);
+    --neon-green-bright: #00cc00;
+    --text-light: #0a0a0a;  /* Dark text for light backgrounds */
+    --text-gray: #4a4a4a;
+    --text-dim: #6a6a6a;
+    --accent-red: #cc0000;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(0, 179, 0, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --primary-dark: #0a0a0a;
+    --secondary-dark: #1a1a1a;
+    --tertiary-dark: #2a2a2a;
+    --neon-green: #00ff00;
+    --neon-green-dim: rgba(0, 255, 0, 0.3);
+    --neon-green-bright: #39ff39;
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+    --text-dim: #999999;
+    --accent-red: #ff3333;
+    --card-bg: rgba(26, 26, 26, 0.9);
+    --border-color: rgba(0, 255, 0, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*-- -------------------------- -->
+<---        Hero Stats          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .why-hero-section {
+        padding: var(--sectionPadding);
+        background: #f8f8f8;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, var(--neon-green-dim) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, var(--neon-green-dim) 0%, transparent 50%);
+            pointer-events: none;
+            opacity: 0.5;  /* More visible in light mode */
+        }
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            padding: 0 calc(16 / 16 * 1rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-hero-content {
+            text-align: center;
+            max-width: calc(900 / 16 * 1rem);
+            margin: 0 auto;
+        }
+
+        .why-hero-title {
+            font-size: clamp(1.75rem, 5vw, 3.5rem);
+            color: #1a1a1a;
+            margin-bottom: calc(16 / 16 * 1rem);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .why-hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.375rem);
+            color: #666;
+            margin-bottom: calc(32 / 16 * 1rem);
+            line-height: 1.5;
+        }
+
+        .why-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(24 / 16 * 1rem);
+            margin-top: calc(32 / 16 * 1rem);
+        }
+
+        .why-stat {
+            background: #fff;
+            padding: calc(24 / 16 * 1rem);
+            border-radius: calc(8 / 16 * 1rem);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(calc(-2 / 16 * 1rem));
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        .why-stat-number {
+            display: block;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            color: #00cc00;
+            margin-bottom: calc(8 / 16 * 1rem);
+        }
+
+        .why-stat-text {
+            font-size: calc(14 / 16 * 1rem);
+            color: #666;
+            line-height: 1.4;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .why-hero-section {
+        .why-stats-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc(32 / 16 * 1rem);
+        }
+
+        .why-stat {
+            padding: calc(32 / 16 * 1rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---      Problems Section      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .why-problems-section {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            padding: 0 calc(16 / 16 * 1rem);
+        }
+
+        .why-section-header {
+            text-align: center;
+            max-width: calc(800 / 16 * 1rem);
+            margin: 0 auto calc(48 / 16 * 1rem);
+        }
+
+        .why-topper {
+            font-size: calc(14 / 16 * 1rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #00cc00;
+            display: block;
+            margin-bottom: calc(8 / 16 * 1rem);
+            font-weight: 600;
+        }
+
+        .why-title {
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: calc(16 / 16 * 1rem);
+            line-height: 1.2;
+        }
+
+        .why-intro {
+            font-size: calc(16 / 16 * 1rem);
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .why-problems-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(24 / 16 * 1rem);
+        }
+
+        .why-problem-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: calc(8 / 16 * 1rem);
+            padding: calc(24 / 16 * 1rem);
+            transition: all 0.3s ease;
+
+            &:hover {
+                border-color: #ff4444;
+                box-shadow: 0 5px 20px rgba(255, 68, 68, 0.1);
+
+                .why-icon-wrapper {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .why-icon-wrapper {
+            width: calc(48 / 16 * 1rem);
+            height: calc(48 / 16 * 1rem);
+            background: rgba(255, 68, 68, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: calc(16 / 16 * 1rem);
+            transition: transform 0.3s ease;
+        }
+
+        .why-icon {
+            width: calc(24 / 16 * 1rem);
+            height: calc(24 / 16 * 1rem);
+        }
+
+        .why-problem-card h3 {
+            font-size: calc(18 / 16 * 1rem);
+            color: #1a1a1a;
+            margin-bottom: calc(12 / 16 * 1rem);
+            line-height: 1.3;
+        }
+
+        .why-problem-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: calc(15 / 16 * 1rem);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .why-problems-section {
+        .why-section-header {
+            margin-bottom: calc(48 / 16 * 1rem);
+        }
+
+        .why-intro {
+            font-size: calc(18 / 16 * 1rem);
+        }
+
+        .why-problem-card {
+            padding: calc(32 / 16 * 1rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .why-problems-section {
+        .why-problems-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc(32 / 16 * 1rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---      Benefits Section      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .why-benefits-section {
+        padding: var(--sectionPadding);
+        background-color: #f8f8f8;
+        position: relative;  /* Add this */
+        overflow: hidden;    /* Add this */
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, var(--neon-green-dim) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, var(--neon-green-dim) 0%, transparent 50%);
+            pointer-events: none;
+            opacity: 0.5;  /* More visible in light mode */
+        }
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            padding: 0 calc(16 / 16 * 1rem);
+            position: relative;  /* Add this to ensure content is above orbs */
+            z-index: 1;         /* Add this */
+        }
+
+        .why-benefits-list {
+            max-width: calc(800 / 16 * 1rem);
+            margin: 0 auto;
+            display: grid;
+            gap: calc(24 / 16 * 1rem);
+        }
+
+        .why-benefit {
+            display: flex;
+            flex-direction: column;
+            gap: calc(16 / 16 * 1rem);
+            padding: calc(24 / 16 * 1rem);
+            background: #fff;
+            border-radius: calc(8 / 16 * 1rem);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(calc(-2 / 16 * 1rem));
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+                .why-benefit-number {
+                    background: #00cc00;
+                    color: #fff;
+                }
+            }
+        }
+
+        .why-benefit-number {
+            flex-shrink: 0;
+            width: calc(48 / 16 * 1rem);
+            height: calc(48 / 16 * 1rem);
+            background: rgba(0, 200, 0, 0.1);
+            color: #00cc00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(20 / 16 * 1rem);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .why-benefit-content h3 {
+            font-size: calc(20 / 16 * 1rem);
+            color: #1a1a1a;
+            margin-bottom: calc(8 / 16 * 1rem);
+            line-height: 1.3;
+        }
+
+        .why-benefit-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: calc(15 / 16 * 1rem);
+        }
+
+        .why-section-header {
+            text-align: center;
+            max-width: calc(800 / 16 * 1rem);
+            margin: 0 auto calc(48 / 16 * 1rem); // Add this for spacing below
+        }
+
+
+        .why-topper {
+            font-size: calc(14 / 16 * 1rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #00cc00;
+            display: block;
+            margin-bottom: calc(8 / 16 * 1rem);
+            font-weight: 600;
+        }
+
+        .why-title {
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: calc(16 / 16 * 1rem);
+            line-height: 1.2;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .why-benefits-section {
+        .why-benefit {
+            flex-direction: row;
+            gap: calc(24 / 16 * 1rem);
+            padding: calc(32 / 16 * 1rem);
+        }
+
+        .why-benefit-number {
+            width: calc(60 / 16 * 1rem);
+            height: calc(60 / 16 * 1rem);
+            font-size: calc(24 / 16 * 1rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    Comparison Section      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .why-comparison-section {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            padding: 0 calc(16 / 16 * 1rem);
+        }
+
+        .why-title {
+            text-align: center;
+            margin-bottom: calc(32 / 16 * 1rem);
+        }
+
+        .why-section-header {
+            text-align: center;
+            max-width: calc(800 / 16 * 1rem);
+            margin: 0 auto calc(48 / 16 * 1rem); // Add this for spacing below
+        }
+
+        .why-comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(24 / 16 * 1rem);
+        }
+
+        .why-old,
+        .why-new {
+            padding: calc(24 / 16 * 1rem);
+            border-radius: calc(8 / 16 * 1rem);
+        }
+
+        .why-old {
+            background: rgba(255, 68, 68, 0.05);
+            border: 2px solid rgba(255, 68, 68, 0.2);
+        }
+
+        .why-new {
+            background: rgba(0, 200, 0, 0.05);
+            border: 2px solid rgba(0, 200, 0, 0.2);
+        }
+
+        .why-comparison-title {
+            font-size: calc(20 / 16 * 1rem);
+            margin-bottom: calc(16 / 16 * 1rem);
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .why-topper {
+            font-size: calc(14 / 16 * 1rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #00cc00;
+            display: block;
+            margin-bottom: calc(8 / 16 * 1rem);
+            font-weight: 600;
+        }
+
+        .why-title {
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: calc(16 / 16 * 1rem);
+            line-height: 1.2;
+        }
+
+        .why-comparison-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: calc(10 / 16 * 1rem) 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                font-size: calc(15 / 16 * 1rem);
+                color: #333;
+                line-height: 1.5;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .why-comparison-section {
+        .why-old,
+        .why-new {
+            padding: calc(40 / 16 * 1rem);
+        }
+
+        .why-comparison-grid {
+            gap: calc(32 / 16 * 1rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .why-comparison-section {
+        .why-comparison-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---        ROI Section         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .why-roi-section {
+        padding: var(--sectionPadding);
+        background: #f8f8f8;
+
+        .cs-container {
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
+            margin: auto;
+            padding: 0 calc(16 / 16 * 1rem);
+        }
+
+        .why-roi-content {
+            max-width: calc(800 / 16 * 1rem);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-topper {
+            font-size: calc(14 / 16 * 1rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #00cc00;
+            display: block;
+            margin-bottom: calc(8 / 16 * 1rem);
+            font-weight: 600;
+        }
+
+        .why-title {
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: calc(24 / 16 * 1rem);
+            line-height: 1.2;
+        }
+
+        .why-roi-text {
+            font-size: calc(18 / 16 * 1rem);
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: calc(32 / 16 * 1rem);
+        }
+
+        .why-roi-box {
+            background: #fff;
+            border: 2px solid #00cc00;
+            border-radius: calc(8 / 16 * 1rem);
+            padding: calc(24 / 16 * 1rem);
+            box-shadow: 0 5px 20px rgba(0, 200, 0, 0.1);
+        }
+
+        .why-roi-highlight {
+            font-size: calc(16 / 16 * 1rem);
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: calc(16 / 16 * 1rem);
+
+            strong {
+                color: #00cc00;
+                font-weight: 600;
+            }
+        }
+
+        .why-roi-question {
+            font-size: calc(20 / 16 * 1rem);
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .why-roi-section {
+        .why-roi-text {
+            font-size: calc(20 / 16 * 1rem);
+            margin-bottom: calc(48 / 16 * 1rem);
+        }
+
+        .why-roi-box {
+            padding: calc(40 / 16 * 1rem);
+        }
+
+        .why-roi-highlight {
+            font-size: calc(18 / 16 * 1rem);
+            margin-bottom: calc(24 / 16 * 1rem);
+        }
+
+        .why-roi-question {
+            font-size: calc(24 / 16 * 1rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---        Dark Mode           -->
+<--- -------------------------- -*/
+
+body.dark-mode {
+    /* Hero Section Dark Mode */
+    .why-hero-section {
+        background: #0a0a0a;
+
+        &::before {
+            background: radial-gradient(circle, rgba(0, 255, 0, 0.08) 0%, transparent 70%);
+        }
+
+        .why-hero-title {
+            color: #fff;
+        }
+
+        .why-hero-subtitle {
+            color: #ccc;
+        }
+
+        .why-stat {
+            background: #111;
+            box-shadow: 0 2px 10px rgba(0, 255, 0, 0.05);
+
+            &:hover {
+                box-shadow: 0 5px 20px rgba(0, 255, 0, 0.1);
+            }
+        }
+
+        .why-stat-number {
+            color: #00ff00;
+        }
+
+        .why-stat-text {
+            color: #aaa;
+        }
+    }
+
+    /* Problems Section Dark Mode */
+    .why-problems-section {
+        background-color: #111;
+
+        .why-topper {
+            color: #ff6666;
+        }
+
+        .why-title {
+            color: #fff;
+        }
+
+        .why-intro {
+            color: #ccc;
+        }
+
+        .why-problem-card {
+            background: #1a1a1a;
+            border-color: #333;
+
+            &:hover {
+                border-color: #ff6666;
+                box-shadow: 0 5px 20px rgba(255, 102, 102, 0.15);
+            }
+        }
+
+        .why-icon-wrapper {
+            background: rgba(255, 102, 102, 0.15);
+        }
+
+        .why-problem-card h3 {
+            color: #fff;
+        }
+
+        .why-problem-card p {
+            color: #ccc;
+        }
+    }
+
+    /* Benefits Section Dark Mode */
+    .why-benefits-section {
+        background-color: #0a0a0a;
+
+        .why-topper {
+            color: #00ff00;
+        }
+
+        .why-title {
+            color: #fff;
+        }
+
+        .why-benefit {
+            background: #111;
+            box-shadow: 0 2px 10px rgba(0, 255, 0, 0.05);
+
+            &:hover {
+                box-shadow: 0 5px 20px rgba(0, 255, 0, 0.1);
+            }
+        }
+
+        .why-benefit-number {
+            background: rgba(0, 255, 0, 0.15);
+            color: #00ff00;
+        }
+
+        .why-benefit-content h3 {
+            color: #fff;
+        }
+
+        .why-benefit-content p {
+            color: #ccc;
+        }
+    }
+
+    /* Comparison Section Dark Mode */
+    .why-comparison-section {
+        background-color: #111;
+
+        .why-title {
+            color: #fff;
+        }
+
+        .why-old {
+            background: rgba(255, 102, 102, 0.08);
+            border-color: rgba(255, 102, 102, 0.3);
+        }
+
+        .why-new {
+            background: rgba(0, 255, 0, 0.08);
+            border-color: rgba(0, 255, 0, 0.3);
+        }
+
+        .why-comparison-title {
+            color: #fff;
+        }
+
+        .why-comparison-list li {
+            color: #ccc;
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    /* ROI Section Dark Mode */
+    .why-roi-section {
+        background: #0a0a0a;
+
+        .why-topper {
+            color: #00ff00;
+        }
+
+        .why-title {
+            color: #fff;
+        }
+
+        .why-roi-text {
+            color: #ccc;
+        }
+
+        .why-roi-box {
+            background: #111;
+            border-color: #00ff00;
+            box-shadow: 0 5px 20px rgba(0, 255, 0, 0.15);
+        }
+
+        .why-roi-highlight {
+            color: #ccc;
+
+            strong {
+                color: #00ff00;
+            }
+        }
+
+        .why-roi-question {
+            color: #fff;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    Mobile Optimizations    -->
+<--- -------------------------- -*/
+
+/* Small Mobile - 480px */
+@media only screen and (max-width: 30rem) {
+    /* Reduce padding on mobile */
+    .why-hero-section,
+    .why-problems-section,
+    .why-benefits-section,
+    .why-comparison-section,
+    .why-roi-section {
+        padding: calc(60 / 16 * 1rem) 0;
+    }
+
+    /* Adjust typography for small screens */
+    .why-hero-title {
+        font-size: calc(28 / 16 * 1rem);
+    }
+
+    .why-title {
+        font-size: calc(24 / 16 * 1rem);
+    }
+
+    .why-problem-card,
+    .why-benefit,
+    .why-old,
+    .why-new {
+        padding: calc(20 / 16 * 1rem);
+    }
+
+    /* Stack stats vertically on very small screens */
+    .why-stats-grid {
+        gap: calc(16 / 16 * 1rem);
+    }
+
+    .why-stat {
+        padding: calc(20 / 16 * 1rem);
+    }
+
+    /* Adjust ROI box for mobile */
+    .why-roi-box {
+        padding: calc(20 / 16 * 1rem);
+    }
+
+    .why-roi-highlight {
+        font-size: calc(14 / 16 * 1rem);
+    }
+}
+
+/* Ensure text is readable on all screen sizes */
+@media only screen and (min-width: 0rem) {
+    p, li {
+        font-size: clamp(0.875rem, 2vw, 1rem);
+    }
+
+    h3 {
+        font-size: clamp(1.125rem, 3vw, 1.375rem);
+    }
+}

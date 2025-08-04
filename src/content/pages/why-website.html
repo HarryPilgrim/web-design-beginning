@@ -1,0 +1,267 @@
+---
+title: "Why Your Business Needs a New Website | Web Design Darlington, Newcastle & Durham"
+description: "Discover why businesses in Darlington, Newcastle, and Durham are upgrading their websites. Learn how a modern website can transform your local business."
+permalink: "/why-website/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/why-website.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <span class="cs-int-title">Why Upgrade Your Website?</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/why-website/" class="cs-link cs-active">Why New Website</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="portfolio" width="1920" height="482" loading="eager" decoding="async">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--              Hero Stats Section              -->
+    <!-- ============================================ -->
+
+    <section id="why-hero" class="why-hero-section">
+        <div class="cs-container">
+            <div class="why-hero-content">
+                <h1 class="why-hero-title">Your Website Is Your 24/7 Salesperson</h1>
+                <p class="why-hero-subtitle">
+                    While you sleep, your competitors in Newcastle, Durham, and Darlington are winning customers online. 
+                    Is your website working as hard as you are?
+                </p>
+                <div class="why-stats-grid">
+                    <div class="why-stat">
+                        <span class="why-stat-number">75%</span>
+                        <span class="why-stat-text">of users judge credibility based on website design</span>
+                    </div>
+                    <div class="why-stat">
+                        <span class="why-stat-number">88%</span>
+                        <span class="why-stat-text">won't return after a bad experience</span>
+                    </div>
+                    <div class="why-stat">
+                        <span class="why-stat-number">3 sec</span>
+                        <span class="why-stat-text">to make a first impression</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Problems Section                  -->
+    <!-- ============================================ -->
+
+    <section id="why-problems" class="why-problems-section">
+        <div class="cs-container">
+            <div class="why-section-header">
+                <span class="why-topper">The Hidden Costs</span>
+                <h2 class="why-title">Is Your Old Website Costing You Business?</h2>
+                <p class="why-intro">
+                    Every day your outdated website is live, you're losing potential customers to competitors 
+                    across the Northeast. Here's what's really happening:
+                </p>
+            </div>
+
+            <div class="why-problems-grid">
+                <div class="why-problem-card">
+                    <div class="why-icon-wrapper">
+                        <svg class="why-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#ff4444"/>
+                        </svg>
+                    </div>
+                    <h3>Lost Revenue in Darlington & Beyond</h3>
+                    <p>
+                        When potential customers from Darlington, Durham, or Newcastle search for your services 
+                        and find a dated website, 38% will stop engaging with your business entirely. 
+                        That's real money walking away.
+                    </p>
+                </div>
+
+                <div class="why-problem-card">
+                    <div class="why-icon-wrapper">
+                        <svg class="why-icon" viewBox="0 0 24 24">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="#ff4444"/>
+                        </svg>
+                    </div>
+                    <h3>Mobile Users Can't Navigate</h3>
+                    <p>
+                        Over 60% of searches in the Newcastle area are on mobile. If your site isn't 
+                        mobile-responsive, you're invisible to more than half your potential customers. 
+                        They're finding your competitors instead.
+                    </p>
+                </div>
+
+                <div class="why-problem-card">
+                    <div class="why-icon-wrapper">
+                        <svg class="why-icon" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" fill="#ff4444"/>
+                        </svg>
+                    </div>
+                    <h3>Security Vulnerabilities</h3>
+                    <p>
+                        Outdated websites are prime targets for hackers. One breach could destroy your 
+                        reputation across Durham and beyond. Plus, Google now penalizes insecure sites, 
+                        pushing you further down in local searches.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Benefits Section                  -->
+    <!-- ============================================ -->
+
+    <section id="why-benefits" class="why-benefits-section">
+        <div class="cs-container">
+            <div class="why-section-header">
+                <span class="why-topper">THE SOLUTION</span>
+                <h2 class="why-title">What a Modern Website Does for Your Business</h2>
+            </div>
+
+            <div class="why-benefits-list">
+                <div class="why-benefit">
+                    <div class="why-benefit-number">01</div>
+                    <div class="why-benefit-content">
+                        <h3>Builds Instant Trust</h3>
+                        <p>
+                            When someone in Newcastle searches for your services, a professional website 
+                            immediately sets you apart. You become the obvious choice over competitors 
+                            with dated sites.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why-benefit">
+                    <div class="why-benefit-number">02</div>
+                    <div class="why-benefit-content">
+                        <h3>Works 24/7 Across the Northeast</h3>
+                        <p>
+                            Your website never sleeps. While you're closed, it's answering questions, 
+                            showcasing your work, and converting visitors from Darlington to Durham 
+                            into tomorrow's customers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why-benefit">
+                    <div class="why-benefit-number">03</div>
+                    <div class="why-benefit-content">
+                        <h3>Dominates Local Search</h3>
+                        <p>
+                            A properly built website ranks higher in Google. When someone searches 
+                            "service + Newcastle" or "business + Darlington", you'll be there, 
+                            not buried on page 3.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why-benefit">
+                    <div class="why-benefit-number">04</div>
+                    <div class="why-benefit-content">
+                        <h3>Converts Visitors into Customers</h3>
+                        <p>
+                            Modern design isn't just pretty—it's strategic. Clear calls-to-action, 
+                            fast load times, and intuitive navigation turn browsers into buyers 
+                            throughout Durham and beyond.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--           Comparison Section                 -->
+    <!-- ============================================ -->
+
+    <section id="why-comparison" class="why-comparison-section">
+        <div class="cs-container">
+        <div class="why-section-header">
+            <span class="why-topper">The Comparison</span>
+            <h2 class="why-title">Old Website vs. New Website</h2>
+        </div>
+            <div class="why-comparison-grid">
+                <div class="why-old">
+                    <h3 class="why-comparison-title">❌ Old Website Problems</h3>
+                    <ul class="why-comparison-list">
+                        <li>Slow loading (loses 40% of visitors)</li>
+                        <li>Not mobile-friendly (invisible to 60%)</li>
+                        <li>Poor Google ranking in Newcastle searches</li>
+                        <li>Outdated design screams "unprofessional"</li>
+                        <li>No security (vulnerable to attacks)</li>
+                        <li>Can't update content easily</li>
+                        <li>Missing modern features customers expect</li>
+                    </ul>
+                </div>
+                <div class="why-new">
+                    <h3 class="why-comparison-title">✅ New Website Benefits</h3>
+                    <ul class="why-comparison-list">
+                        <li>Lightning fast (keeps visitors engaged)</li>
+                        <li>Perfect on all devices</li>
+                        <li>Ranks high for Darlington, Durham searches</li>
+                        <li>Professional design builds instant trust</li>
+                        <li>Bank-level security built in</li>
+                        <li>Easy to update and maintain</li>
+                        <li>Modern features that convert visitors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              ROI Section                     -->
+    <!-- ============================================ -->
+
+    <section id="why-roi" class="why-roi-section">
+        <div class="cs-container">
+            <div class="why-roi-content">
+                <span class="why-topper">The Bottom Line</span>
+                <h2 class="why-title">Your Website Is an Investment, Not an Expense</h2>
+                <p class="why-roi-text">
+                    Think about it: If your new website brings in just 2-3 new customers per month, 
+                    it's already paid for itself. Every customer after that is pure profit. Meanwhile, 
+                    your old website is actively costing you business every single day.
+                </p>
+                <div class="why-roi-box">
+                    <p class="why-roi-highlight">
+                        <strong>A Newcastle restaurant</strong> saw a 150% increase in reservations after their redesign.<br>
+                        <strong>A Durham contractor</strong> doubled their quote requests in 3 months.<br>
+                        <strong>A Darlington retailer</strong> increased online sales by 200%.
+                    </p>
+                    <p class="why-roi-question">What could a new website do for your business?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Include CTA section if you have one -->
+{% include 'sections/cta.html' %}
+
+{% endblock %}

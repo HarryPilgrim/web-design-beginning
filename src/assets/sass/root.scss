@@ -13,16 +13,23 @@
 @media only screen and (min-width: 0rem) {
     /* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     :root {
-        --primary: #ff6a3e;
-        --primaryLight: #ffba43;
-        --secondary: #ffba43;
-        --secondaryLight: #ffba43;
+        // --primary: #ff6a3e;
+        // --primaryLight: #ffba43;
+        // --secondary: #ffba43;
+        // --secondaryLight: #ffba43;
+        // --headerColor: #1a1a1a;
+        // --bodyTextColor: #4e4b66;
+        // --bodyTextColorWhite: #fafbfc;
+        --primary: #204829;
+        --primaryLight: #80ce87;
+        --secondary: #22b455;
+        --secondaryLight: #92e5a1;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
 
         /* Dark Mode Styles */
-        --dark: #082032;
+        --dark: #0a0a0a;
         --medium: #2c394b;
         --accent: #334756;
 
@@ -90,6 +97,15 @@
         margin: 0;
         color: var(--bodyTextColor);
     }
+}
+
+
+/* Make it even more specific to win the CSS specificity battle */
+#cs-navigation.cs-nav body.dark-mode .cs-logo img,
+body.dark-mode #cs-navigation .cs-logo img,
+html body.dark-mode .cs-logo img {
+    filter: none !important;
+    -webkit-filter: none !important;
 }
 
 /* Components + Utilities */
@@ -1040,10 +1056,10 @@
         #cs-navigation {
             background-color: var(--dark);
 
-            .cs-logo {
-                /* makes it turn white */
-                filter: grayscale(1) brightness(1000%);
-            }
+            // .cs-logo {
+            //     /* makes it turn white */
+            //     filter: grayscale(1) brightness(1000%);
+            // }
 
             .cs-li-link {
                 color: var(--bodyTextColorWhite);

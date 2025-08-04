@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "watch:cms": "npx decap-server",
-        "watch:eleventy": "cross-env ELEVENTY_ENV=DEV eleventy --serve",
+        "watch:eleventy": "cross-env ELEVENTY_ENV=DEV eleventy --serve  --port=3000",
         "build:eleventy": "cross-env ELEVENTY_ENV=PROD eleventy",
         "start": "run-p watch:*",
         "build": "run-s build:*"
@@ -35,8 +35,18 @@
         "esbuild": "^0.25.5",
         "glob": "^10.4.5",
         "netlify-plugin-cache": "^1.0.3",
-        "npm-run-all": "^4.1.5",
+        "npm-run-all2": "^6.2.6",
         "postcss": "^8.5.5",
         "sass": "^1.89.2"
+    },
+    "overrides": {
+        "glob": "^10.4.5",
+        "rimraf": "^5.0.0",
+        "@hapi/joi": "npm:joi@^17.13.3",
+        "@hapi/address": "npm:@sideway/address@^4.1.5",
+        "@hapi/formula": "npm:@sideway/formula@^3.0.1",
+        "inflight": "npm:lru-cache@^10.4.3"
     }
+
+
 }

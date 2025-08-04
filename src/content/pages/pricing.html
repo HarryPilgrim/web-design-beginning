@@ -1,0 +1,311 @@
+---
+title: "Pricing | Wanderers Web Design"
+description: "Affordable web design packages for North East businesses. Early bird pricing available for new clients."
+permalink: "/pricing/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="stylesheet" href="/assets/css/pricing.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <span class="cs-int-title">Pricing</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/pricing/" class="cs-link cs-active">Pricing</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/greenup.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Northeast landscape" width="1920" height="482" loading="eager" decoding="async">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--               Pricing Section                -->
+    <!-- ============================================ -->
+
+    <section id="pricing-content" class="wwd-pricing-section">
+        <div class="cs-container">
+            <div class="wwd-pricing-header">
+                <span class="wwd-topper">Early Bird Special</span>
+                <h2 class="wwd-title">Launch Pricing for New Clients</h2>
+                <p class="wwd-subtitle">
+                    As I'm building my portfolio, I'm offering special rates for early supporters. 
+                    Get premium web design at incredible value, plus help shape the future of North East web development.
+                </p>
+            </div>
+            
+
+            <div class="wwd-pricing-grid">
+                <!-- Essential Package -->
+                <div class="wwd-pricing-card">
+                    <div class="wwd-card-header">
+                        <h3 class="wwd-package-name">Essential Static</h3>
+                        <p class="wwd-package-description">Perfect for local businesses needing a professional web presence</p>
+                    </div>
+                    
+                    <div class="wwd-pricing-display">
+                        <div class="wwd-price-container">
+                            <span class="wwd-currency">£</span>
+                            <span class="wwd-price">999</span>
+                            <span class="wwd-period">one-time</span>
+                        </div>
+                        <div class="wwd-original-price">
+                            <span class="wwd-strike">£1,999</span>
+                            <span class="wwd-discount">50% OFF</span>
+                        </div>
+                    </div>
+
+                    <ul class="wwd-features-list">
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Up to 5 custom pages
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Mobile-responsive design
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            SEO optimization
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Contact form integration
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            1-year hosting included
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            £25 per month to host and maintain
+                        </li>
+                    </ul>
+
+                    <button class="wwd-cta-button">
+                        <span class="wwd-button-text">Get Started</span>
+                        <div class="wwd-button-glow"></div>
+                    </button>
+                </div>
+
+                <!-- Monthly Package -->
+                <div class="wwd-pricing-card wwd-featured">
+                    <div class="wwd-popular-badge">Most Popular</div>
+                    <div class="wwd-card-header">
+                        <h3 class="wwd-package-name">Monthly Growth</h3>
+                        <p class="wwd-package-description">Ongoing development and maintenance for growing businesses</p>
+                    </div>
+                    
+                    <div class="wwd-pricing-display">
+                        <div class="wwd-price-container">
+                            <span class="wwd-currency">£</span>
+                            <span class="wwd-price">99</span>
+                            <span class="wwd-period">per month</span>
+                        </div>
+                        <div class="wwd-setup-fee">
+                            <span class="wwd-setup-text">Setup: £300 (normally £800)</span>
+                        </div>
+                    </div>
+
+                    <ul class="wwd-features-list">
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Everything in Essential
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Extra pages & updates
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Hosting & maintenance included
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Monthly analytics reports
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Priority support
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            12 month minimum contract
+                        </li>
+                    </ul>
+
+                    <button class="wwd-cta-button">
+                        <span class="wwd-button-text">Start Growing</span>
+                        <div class="wwd-button-glow"></div>
+                    </button>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="wwd-pricing-card">
+                    <div class="wwd-card-header">
+                        <h3 class="wwd-package-name">Premium Dynamic</h3>
+                        <p class="wwd-package-description">Advanced functionality with animations, e-commerce, and custom features</p>
+                    </div>
+                    
+                    <div class="wwd-pricing-display">
+                        <div class="wwd-price-container">
+                            <span class="wwd-currency">£</span>
+                            <span class="wwd-price">Custom</span>
+                            <span class="wwd-period">quote</span>
+                        </div>
+                        <div class="wwd-original-price">
+                            <span class="wwd-starting">Starting from £2,000</span>
+                        </div>
+                    </div>
+
+                    <ul class="wwd-features-list">
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Everything in Monthly Growth
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Custom animations & interactions
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            E-commerce functionality
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            User authentication systems
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Database integration
+                        </li>
+                        <li class="wwd-feature">
+                            <svg class="wwd-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.25 6.25L8.125 14.375L3.75 10" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            API development
+                        </li>
+                    </ul>
+
+                    <button class="wwd-cta-button">
+                        <span class="wwd-button-text">Get Quote</span>
+                        <div class="wwd-button-glow"></div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Early Bird Notice -->
+        
+            <div class="wwd-early-bird-notice">
+                <div class="wwd-notice-content">
+                    <div class="wwd-notice-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 2l4.47 13.76H34l-11.16 8.11L27.32 37.5 16 29.39 4.68 37.5l4.48-13.63L-2 15.76h13.53L16 2z" fill="#00ff00"/>
+                        </svg>
+                    </div>
+                    <div class="wwd-notice-text">
+                        <h3>Early Bird Special - Limited Time</h3>
+                        <p>These introductory rates are available for the first 5 clients. Help me build my portfolio and get exceptional value in return. All early bird clients receive a lifetime 20% discount on future services.</p>
+                    </div>
+                </div>
+                <div class="wwd-matrix-rain"></div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                FAQ Section                   -->
+    <!-- ============================================ -->
+
+    <section id="pricing-faq" class="wwd-faq-section">
+        <div class="cs-container">
+            <div class="wwd-faq-header">
+                <span class="wwd-topper">Questions?</span>
+                <h2 class="wwd-title">Pricing FAQ</h2>
+            </div>
+
+            <div class="wwd-faq-grid">
+                <div class="wwd-faq-item">
+                    <h3 class="wwd-faq-question">Why are the prices so low?</h3>
+                    <p class="wwd-faq-answer">As I'm building my portfolio and establishing my presence in the North East market, I'm offering these special rates to early supporters. You get premium quality at incredible value, and I get to work with amazing local businesses.</p>
+                </div>
+
+                <div class="wwd-faq-item">
+                    <h3 class="wwd-faq-question">What happens after the early bird period?</h3>
+                    <p class="wwd-faq-answer">Prices will return to normal market rates, but all early bird clients receive a lifetime 20% discount on future services. You'll always get preferential pricing as one of my founding clients.</p>
+                </div>
+
+                <div class="wwd-faq-item">
+                    <h3 class="wwd-faq-question">Is there a contract for monthly plans?</h3>
+                    <p class="wwd-faq-answer">Yes, minimum 12 month contract.</p>
+                </div>
+
+                <div class="wwd-faq-item">
+                    <h3 class="wwd-faq-question">What's included in hosting?</h3>
+                    <p class="wwd-faq-answer">Fast SSD hosting, SSL certificates, daily backups, security monitoring, and 99.9% uptime guarantee. Everything you need for a professional web presence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Include CTA section if you have one -->
+{% include 'sections/cta.html' %}
+
+{% endblock %}
