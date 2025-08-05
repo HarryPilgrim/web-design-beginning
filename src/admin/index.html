@@ -13,12 +13,70 @@
 </head>
 
 <body>
-    <script src="https://unpkg.com/decap-cms@^3.8.0/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.1.10/dist/decap-cms.js"></script>
 
     <!-- Decap CMS preview pane script -->
     <!-- Edit this script to customize the preview pane for your blog posts.  -->
     <!-- Documentation: https://decapcms.org/docs/customization/ -->
-    <script type="text/babel">
+
+
+<script type="text/babel">
+    const BlogPreview = ({ entry, getAsset }) => {
+        const data = entry.getIn(['data']).toJS();
+        const { title, author, date: rawDate, image, body } = data;
+        
+        // Handle date formatting safely
+        let formattedDate = '';
+        if (rawDate) {
+            try {
+                const date = new Date(rawDate);
+                formattedDate = date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            } catch (e) {
+                formattedDate = rawDate;
+            }
+        }
+
+        // Get image safely
+        const coverImage = image ? getAsset(image) : null;
+
+        return (
+            <div className="frame-content">
+                <div className="blog">
+                    <h1 className="title">{title || 'Untitled'}</h1>
+                    
+                    <div className="metadata">
+                        <div className="author">{author || 'Anonymous'}</div>
+                        <div className="dot"></div>
+                        <div className="date">{formattedDate}</div>
+                    </div>
+
+                    {coverImage && <img src={coverImage.toString()} className="cover" alt="Cover" />}
+
+                    <hr className="divider" />
+
+                    <div className="markdown">
+                        {entry.getIn(['data', 'body']) && (
+                            <div dangerouslySetInnerHTML={{ 
+                                __html: entry.getIn(['data', 'body']) 
+                            }} />
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    // Register the preview
+    CMS.registerPreviewTemplate("blog", BlogPreview);
+    CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
+</script>
+
+
+    <!-- <script type="text/babel">
         const BlogPreview = createClass({
             render: function () {
                 // Get all the props from the collection
@@ -62,7 +120,7 @@
         // Register the elements and styles for the "blog" collection
         CMS.registerPreviewTemplate("blog", BlogPreview);
         CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
-    </script>
+    </script> -->
 </body>
 
 </html>
