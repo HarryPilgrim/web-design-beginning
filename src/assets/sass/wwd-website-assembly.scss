@@ -295,185 +295,370 @@
   }
 }
 
-/* Mobile - Much smaller sizes */
+/* Mobile Layout Fix - Make everything fit on screen */
 @media (max-width: 768px) {
   .wwd-assembly-section {
-    padding: 60px 15px;
+    padding: 40px 10px; /* Reduce padding */
+    min-height: auto; /* Don't force full height */
   }
   
-  .wwd-assembly-title {
-    font-size: 1.75rem;
+  .wwd-assembly-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
   }
   
-  .wwd-assembly-subtitle {
-    font-size: 0.9rem;
+  .wwd-assembly-text {
+    text-align: center;
+    margin-bottom: 20px;
   }
   
-  .wwd-computer-screen {
-    width: 350px;
-    height: 233px;
-    border: 12px solid #222;
-  }
-  
-  .wwd-navbar {
-    height: 40px;
-    padding: 0 20px;
-  }
-  
-  .wwd-navbar-logo {
-    font-size: 0.9rem;
-  }
-  
-  .wwd-navbar-menu span {
-    width: 20px;
-    height: 2px;
-  }
-  
-  .wwd-hero-title {
-    top: 60px;
-    left: 20px;
-    right: 120px;
-  }
-  
-  .wwd-hero-title h1 {
-    font-size: 1.25rem;
-  }
-  
-  .wwd-hero-title p {
-    font-size: 0.8rem;
-  }
-  
-  .wwd-sidebar {
-    top: 60px;
-    right: 20px;
-    width: 90px;
-    padding: 12px;
-  }
-  
-  .wwd-sidebar-item {
-    height: 12px;
-    margin-bottom: 10px;
-  }
-  
-  .wwd-content-1,
-  .wwd-content-2 {
-    width: 130px;
-    top: 140px;
-  }
-  
-  .wwd-content-2 {
-    left: 170px;
-  }
-  
-  .wwd-content-box {
-    height: 60px;
-  }
-  
-  .wwd-footer {
-    height: 35px;
-  }
-  
-  .wwd-computer-stand {
-    width: 70px;
-    height: 40px;
-    margin: -7px auto 0;
-  }
-  
-  .wwd-computer-base {
-    width: 140px;
-    height: 7px;
-  }
-  
-  .wwd-matrix-drop {
-    font-size: 11px;
-  }
-}
-
-/* Very small mobile */
-@media (max-width: 480px) {
-  .wwd-computer-screen {
-    width: 280px;
-    height: 187px;
-    border: 10px solid #222;
-  }
-  
+  /* Make text smaller to fit */
   .wwd-assembly-title {
     font-size: 1.5rem;
+    line-height: 1.2;
   }
   
   .wwd-assembly-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    line-height: 1.3;
   }
   
-  .wwd-navbar {
-    height: 35px;
-    padding: 0 15px;
+  /* Make computer much smaller to fit mobile screen */
+  .wwd-computer-screen {
+    width: 280px !important;  /* Much smaller */
+    height: 180px !important; /* Much smaller */
+    border: 8px solid #222 !important;
+    margin: 0 auto; /* Center it */
   }
   
-  .wwd-navbar-logo {
-    font-size: 0.8rem;
+  .wwd-computer-frame {
+    transform: none; /* Remove 3D rotation on mobile */
   }
   
-  .wwd-navbar-menu span {
-    width: 16px;
-    height: 2px;
-    margin: 0 3px;
+  /* Hide the complex desktop parts on mobile */
+  .wwd-website-preview,
+  .wwd-assembly-matrix {
+    display: none !important;
   }
   
-  .wwd-hero-title {
-    top: 50px;
-    left: 15px;
-    right: 95px;
+  /* Mobile screen content */
+  .wwd-mobile-screen {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
   }
   
-  .wwd-hero-title h1 {
-    font-size: 1rem;
+  .wwd-mobile-preview {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
   
-  .wwd-hero-title p {
-    font-size: 0.7rem;
+  .wwd-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
   }
   
-  .wwd-sidebar {
-    top: 50px;
-    right: 15px;
-    width: 70px;
-    padding: 10px;
+  .wwd-mobile-logo {
+    font-weight: bold;
+    color: #00ff9d;
+    font-size: 10px;
   }
   
-  .wwd-sidebar-item {
-    height: 10px;
+  .wwd-mobile-menu {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .wwd-mobile-hero-section {
+    text-align: center;
+    padding: 5px 0;
     margin-bottom: 8px;
   }
   
-  .wwd-content-1,
-  .wwd-content-2 {
-    width: 100px;
-    top: 110px;
+  .wwd-mobile-hero-section h3 {
+    color: #333;
+    margin: 0 0 2px 0;
+    font-size: 11px;
+    font-weight: bold;
   }
   
-  .wwd-content-2 {
-    left: 125px;
+  .wwd-mobile-hero-section p {
+    color: #666;
+    margin: 0;
+    font-size: 8px;
   }
   
-  .wwd-content-box {
-    height: 45px;
+  .wwd-mobile-feature-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+    flex: 1;
   }
   
-  .wwd-footer {
-    height: 30px;
+  .wwd-mobile-feature {
+    background: #f8f9fa;
+    padding: 4px 6px;
+    border-radius: 3px;
+    font-size: 7px;
+    color: #333;
+    text-align: center;
   }
   
+  .wwd-mobile-cta-section {
+    text-align: center;
+  }
+  
+  .wwd-mobile-button {
+    background: linear-gradient(135deg, #00ff9d, #00cc7e);
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 7px;
+  }
+  
+  /* Make computer stand smaller too */
   .wwd-computer-stand {
-    width: 60px;
-    height: 30px;
+    width: 50px !important;
+    height: 25px !important;
+    margin: -5px auto 0 !important;
   }
   
   .wwd-computer-base {
-    width: 120px;
-    height: 6px;
+    width: 100px !important;
+    height: 5px !important;
   }
 }
+
+/* Very small mobile - even more compact */
+@media (max-width: 480px) {
+  .wwd-assembly-section {
+    padding: 30px 5px;
+  }
+  
+  .wwd-assembly-title {
+    font-size: 1.3rem;
+  }
+  
+  .wwd-assembly-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  /* Even smaller computer */
+  .wwd-computer-screen {
+    width: 240px !important;
+    height: 150px !important;
+    border: 6px solid #222 !important;
+  }
+  
+  .wwd-computer-stand {
+    width: 40px !important;
+    height: 20px !important;
+  }
+  
+  .wwd-computer-base {
+    width: 80px !important;
+    height: 4px !important;
+  }
+
+  }
+
+// /* Mobile - Much smaller sizes */
+// @media (max-width: 768px) {
+//   .wwd-assembly-section {
+//     padding: 60px 15px;
+//   }
+  
+//   .wwd-assembly-title {
+//     font-size: 1.75rem;
+//   }
+  
+//   .wwd-assembly-subtitle {
+//     font-size: 0.9rem;
+//   }
+  
+//   .wwd-computer-screen {
+//     width: 350px;
+//     height: 233px;
+//     border: 12px solid #222;
+//   }
+  
+//   .wwd-navbar {
+//     height: 40px;
+//     padding: 0 20px;
+//   }
+  
+//   .wwd-navbar-logo {
+//     font-size: 0.9rem;
+//   }
+  
+//   .wwd-navbar-menu span {
+//     width: 20px;
+//     height: 2px;
+//   }
+  
+//   .wwd-hero-title {
+//     top: 60px;
+//     left: 20px;
+//     right: 120px;
+//   }
+  
+//   .wwd-hero-title h1 {
+//     font-size: 1.25rem;
+//   }
+  
+//   .wwd-hero-title p {
+//     font-size: 0.8rem;
+//   }
+  
+//   .wwd-sidebar {
+//     top: 60px;
+//     right: 20px;
+//     width: 90px;
+//     padding: 12px;
+//   }
+  
+//   .wwd-sidebar-item {
+//     height: 12px;
+//     margin-bottom: 10px;
+//   }
+  
+//   .wwd-content-1,
+//   .wwd-content-2 {
+//     width: 130px;
+//     top: 140px;
+//   }
+  
+//   .wwd-content-2 {
+//     left: 170px;
+//   }
+  
+//   .wwd-content-box {
+//     height: 60px;
+//   }
+  
+//   .wwd-footer {
+//     height: 35px;
+//   }
+  
+//   .wwd-computer-stand {
+//     width: 70px;
+//     height: 40px;
+//     margin: -7px auto 0;
+//   }
+  
+//   .wwd-computer-base {
+//     width: 140px;
+//     height: 7px;
+//   }
+  
+//   .wwd-matrix-drop {
+//     font-size: 11px;
+//   }
+// }
+
+// /* Very small mobile */
+// @media (max-width: 480px) {
+//   .wwd-computer-screen {
+//     width: 280px;
+//     height: 187px;
+//     border: 10px solid #222;
+//   }
+  
+//   .wwd-assembly-title {
+//     font-size: 1.5rem;
+//   }
+  
+//   .wwd-assembly-subtitle {
+//     font-size: 0.8rem;
+//   }
+  
+//   .wwd-navbar {
+//     height: 35px;
+//     padding: 0 15px;
+//   }
+  
+//   .wwd-navbar-logo {
+//     font-size: 0.8rem;
+//   }
+  
+//   .wwd-navbar-menu span {
+//     width: 16px;
+//     height: 2px;
+//     margin: 0 3px;
+//   }
+  
+//   .wwd-hero-title {
+//     top: 50px;
+//     left: 15px;
+//     right: 95px;
+//   }
+  
+//   .wwd-hero-title h1 {
+//     font-size: 1rem;
+//   }
+  
+//   .wwd-hero-title p {
+//     font-size: 0.7rem;
+//   }
+  
+//   .wwd-sidebar {
+//     top: 50px;
+//     right: 15px;
+//     width: 70px;
+//     padding: 10px;
+//   }
+  
+//   .wwd-sidebar-item {
+//     height: 10px;
+//     margin-bottom: 8px;
+//   }
+  
+//   .wwd-content-1,
+//   .wwd-content-2 {
+//     width: 100px;
+//     top: 110px;
+//   }
+  
+//   .wwd-content-2 {
+//     left: 125px;
+//   }
+  
+//   .wwd-content-box {
+//     height: 45px;
+//   }
+  
+//   .wwd-footer {
+//     height: 30px;
+//   }
+  
+//   .wwd-computer-stand {
+//     width: 60px;
+//     height: 30px;
+//   }
+  
+//   .wwd-computer-base {
+//     width: 120px;
+//     height: 6px;
+//   }
+// }
+
 
 
 
