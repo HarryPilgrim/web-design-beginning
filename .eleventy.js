@@ -29,6 +29,9 @@ module.exports = function (eleventyConfig) {
     // Learn more: https://www.11ty.dev/docs/events/
     // ═════════════════════════════════════════════════════════════════════════
 
+      // Ignore admin folder
+    eleventyConfig.ignores.add("src/admin/**");
+
     /*
      * JavaScript & CSS Processing
      * These processors handle bundling, transpiling, and minification
