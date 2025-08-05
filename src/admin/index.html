@@ -20,32 +20,60 @@
     <!-- Documentation: https://decapcms.org/docs/customization/ -->
 
 
-        <script>
-            // Simple preview without complex JSX
-            CMS.registerPreviewTemplate("blog", function(props) {
-                const entry = props.entry;
-                const title = entry.getIn(['data', 'title']) || 'Untitled';
-                const author = entry.getIn(['data', 'author']) || 'Anonymous';
-                const body = entry.getIn(['data', 'body']) || '';
-                
-                return `
-                    <div class="frame-content">
-                        <div class="blog">
-                            <h1 class="title">${title}</h1>
-                            <div class="metadata">
-                                <div class="author">${author}</div>
-                            </div>
-                            <hr class="divider" />
-                            <div class="markdown">
-                                <p>${body.substring(0, 200)}...</p>
-                            </div>
-                        </div>
+<script type="text/babel">
+    const BlogPreview = ({ entry, getAsset }) => {
+        const data = entry.getIn(['data']).toJS();
+        const { title, author, date: rawDate, image, body } = data;
+        
+        // Handle date formatting safely
+        let formattedDate = '';
+        if (rawDate) {
+            try {
+                const date = new Date(rawDate);
+                formattedDate = date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            } catch (e) {
+                formattedDate = rawDate;
+            }
+        }
+
+        // Get image safely
+        const coverImage = image ? getAsset(image) : null;
+
+        return (
+            <div className="frame-content">
+                <div className="blog">
+                    <h1 className="title">{title || 'Untitled'}</h1>
+                    
+                    <div className="metadata">
+                        <div className="author">{author || 'Anonymous'}</div>
+                        <div className="dot"></div>
+                        <div className="date">{formattedDate}</div>
                     </div>
-                `;
-            });
-            
-            CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
-        </script>
+
+                    {coverImage && <img src={coverImage.toString()} className="cover" alt="Cover" />}
+
+                    <hr className="divider" />
+
+                    <div className="markdown">
+                        {entry.getIn(['data', 'body']) && (
+                            <div dangerouslySetInnerHTML={{ 
+                                __html: entry.getIn(['data', 'body']) 
+                            }} />
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    // Register the preview
+    CMS.registerPreviewTemplate("blog", BlogPreview);
+    CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
+</script>
 
 
     <!-- <script type="text/babel">
