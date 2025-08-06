@@ -1,0 +1,244 @@
+/* NeonFlow USP Text Component */
+.nf-usp-text-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.nf-usp-text-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(0, 255, 65, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.nf-usp-text-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nf-usp-text-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    position: relative;
+}
+
+.nf-usp-text-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
+}
+
+.nf-usp-text-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.nf-usp-paragraph {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.8rem;
+    text-align: left;
+}
+
+.nf-usp-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.nf-quote {
+    font-style: italic;
+    padding: 1.5rem;
+    border-left: 3px solid rgba(0, 255, 65, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+/* Interactive hover text effects - now with constant glow */
+.nf-hover-text {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #00ff41;
+    text-shadow: 
+        0 0 3px rgba(0, 255, 65, 0.6),
+        0 0 6px rgba(0, 255, 65, 0.3);
+    animation: nf-subtle-flicker 4s ease-in-out infinite;
+}
+
+/* Subtle constant flicker animation */
+@keyframes nf-subtle-flicker {
+    0%, 100% {
+        text-shadow: 
+            0 0 3px rgba(0, 255, 65, 0.6),
+            0 0 6px rgba(0, 255, 65, 0.3);
+        opacity: 0.9;
+    }
+    25% {
+        text-shadow: 
+            0 0 5px rgba(0, 255, 65, 0.8),
+            0 0 10px rgba(0, 255, 65, 0.4);
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 
+            0 0 2px rgba(0, 255, 65, 0.5),
+            0 0 4px rgba(0, 255, 65, 0.2);
+        opacity: 0.8;
+    }
+    75% {
+        text-shadow: 
+            0 0 6px rgba(0, 255, 65, 0.9),
+            0 0 12px rgba(0, 255, 65, 0.5);
+        opacity: 1;
+    }
+}
+
+/* Hover effect - intensifies the glow */
+.nf-hover-text:hover {
+    color: #00ff41;
+    text-shadow: 
+        0 0 8px rgba(0, 255, 65, 1),
+        0 0 16px rgba(0, 255, 65, 0.8),
+        0 0 24px rgba(0, 255, 65, 0.6),
+        0 0 32px rgba(0, 255, 65, 0.4);
+    animation: nf-intense-flicker 0.1s ease-in-out 3;
+}
+
+@keyframes nf-intense-flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Different flicker timings for variety */
+.nf-hover-text:nth-child(2n) {
+    animation-delay: 0.5s;
+}
+
+.nf-hover-text:nth-child(3n) {
+    animation-delay: 1s;
+}
+
+.nf-hover-text:nth-child(4n) {
+    animation-delay: 1.5s;
+}
+
+/* Much more visible matrix background pattern */
+.nf-usp-text-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(transparent 70%, rgba(0, 255, 65, 0.08) 70%),
+        linear-gradient(90deg, transparent 70%, rgba(0, 255, 65, 0.08) 70%);
+    background-size: 8px 8px;
+    opacity: 0.4;
+    animation: nf-matrix-scroll 15s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes nf-matrix-scroll {
+    0% {
+        transform: translateY(-50px) translateX(-50px);
+    }
+    100% {
+        transform: translateY(50px) translateX(50px);
+    }
+}
+
+/* Additional matrix rain drops */
+.nf-usp-text-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 60% 60%, rgba(0, 255, 65, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, rgba(0, 255, 65, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px, 60px 60px, 80px 80px;
+    animation: nf-matrix-rain 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes nf-matrix-rain {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0.3;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nf-usp-text-section {
+        padding: 3rem 0;
+    }
+    
+    .nf-usp-text-container {
+        padding: 0 1rem;
+    }
+    
+    .nf-usp-text-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .nf-quote {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    /* Reduce matrix effects on mobile for performance */
+    .nf-usp-text-section::after {
+        background-size: 4px 4px;
+        opacity: 0.2;
+    }
+}
+
+/* Selection styling */
+.nf-usp-text-section ::selection {
+    background: rgba(0, 255, 65, 0.2);
+    color: #00ff41;
+}
+
+.nf-usp-text-section ::-moz-selection {
+    background: rgba(0, 255, 65, 0.2);
+    color: #00ff41;
+}
