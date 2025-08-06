@@ -72,11 +72,11 @@ Common customer concerns your website should address:
 
 * Pricing transparency (even ranges help)
 * Service area coverage
-* \    Timeline expectations
-* \    Licensing and insurance verification
+*  Timeline expectations
+*    Licensing and insurance verification
 * Previous work examples and testimonials
-* \    Emergency availability
-* \    Payment options and financing
+*   Emergency availability
+*    Payment options and financing
 
   The sales acceleration effect: When prospects arrive at your website and find answers to their questions, they're significantly more likely to contact you ready to move forward. This reduces your sales cycle length and increases conversion rates because you're only speaking with pre-qualified, informed prospects.
 
@@ -87,17 +87,17 @@ A professional website removes the constraints that limit traditional service bu
 Without a website, your business growth is limited by:
 
 * Geographic reach (only local word-of-mouth)
-* \    Time constraints (only business hours for inquiries)
-* \    Personal capacity (you can only talk to one person at a time)
-* \    Market awareness (people must already know you exist)
+*   Time constraints (only business hours for inquiries)
+*   Personal capacity (you can only talk to one person at a time)
+*   Market awareness (people must already know you exist)
 
 Scaling opportunities with a website:
 
-* \    Expand service areas by ranking in multiple location searches
-* \    Generate leads 24/7 even when you're working or sleeping
-* \    Serve multiple customers simultaneously through online information and booking
-* \    Build industry authority through valuable content that attracts media attention
-* \    Create passive income streams through digital products or affiliate partnerships
+*   Expand service areas by ranking in multiple location searches
+*   Generate leads 24/7 even when you're working or sleeping
+*   Serve multiple customers simultaneously through online information and booking
+*   Build industry authority through valuable content that attracts media attention
+*   Create passive income streams through digital products or affiliate partnerships
 
 The growth trajectory: Businesses with professional websites typically see 40-60% faster growth than those relying solely on traditional marketing methods, because they can capture demand from a much larger market.
 
@@ -107,11 +107,11 @@ Here's what many business owners get wrong: they view a website as an expense ra
 
 Cheap website builders promise easy solutions, but they can't deliver:
 
-* \    Strategic keyword optimization for your market
-* \    Professional design that converts visitors to customers
-* \    Technical performance that Google rewards with higher rankings
-* \    Content strategy that establishes industry authority
-* \    Integration with lead generation and customer management systems
+*   Strategic keyword optimization for your market
+*   Professional design that converts visitors to customers
+*   Technical performance that Google rewards with higher rankings
+*   Content strategy that establishes industry authority
+*   Integration with lead generation and customer management systems
 
 The reality: In competitive markets, businesses at the top are investing 3,000−5,000 monthly in SEO and advertising because they′re generating 50,000-100,000 in monthly sales. The investment pays for itself many times over.
 
@@ -121,11 +121,11 @@ The businesses thriving in 2025 aren't necessarily the ones with the best produc
 
 To get started:
 
-* \    Audit your current online presence - Search for your business and competitors
-* \    Set up Google Business Profile if you haven't already
-* \    Invest in professional website development with strategic optimization
-* \    Create valuable content that answers your customers' questions
-* \    Track and optimize your results continuously
+*   Audit your current online presence - Search for your business and competitors
+*   Set up Google Business Profile if you haven't already
+*   Invest in professional website development with strategic optimization
+*   Create valuable content that answers your customers' questions
+*   Track and optimize your results continuously
 
   Remember: every day without a professional website is a day your competitors are capturing customers who could have been yours. In the digital economy, being invisible online means being invisible to growth opportunities.
 
