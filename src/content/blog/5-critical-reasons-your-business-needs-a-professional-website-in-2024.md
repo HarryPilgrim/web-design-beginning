@@ -6,7 +6,7 @@ author: Harold Crittenden
 date: 2025-08-06T15:53:00.000Z
 tags:
   - post
-image: https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: /assets/images/blog/jeffrey-zhang-kypuo59qpc0-unsplash.jpg
 imageAlt: laptop
 ---
 In today's digital-first world, the question isn't whether your business needs a website—it's whether you can afford to operate without one. As a web developer who works extensively with local businesses and tradespeople, I've seen firsthand how the right website can transform a struggling business into a thriving enterprise.
