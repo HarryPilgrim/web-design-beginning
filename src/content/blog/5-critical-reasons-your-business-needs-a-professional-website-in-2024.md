@@ -70,11 +70,11 @@ Every industry has the same handful of questions that customers ask repeatedly. 
 
 Common customer concerns your website should address:
 
-*    Pricing transparency (even ranges help)
-*    Service area coverage
+* Pricing transparency (even ranges help)
+* Service area coverage
 * \    Timeline expectations
 * \    Licensing and insurance verification
-*    Previous work examples and testimonials
+* Previous work examples and testimonials
 * \    Emergency availability
 * \    Payment options and financing
 
@@ -86,7 +86,7 @@ A professional website removes the constraints that limit traditional service bu
 
 Without a website, your business growth is limited by:
 
-*    Geographic reach (only local word-of-mouth)
+* Geographic reach (only local word-of-mouth)
 * \    Time constraints (only business hours for inquiries)
 * \    Personal capacity (you can only talk to one person at a time)
 * \    Market awareness (people must already know you exist)
