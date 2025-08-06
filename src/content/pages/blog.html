@@ -52,17 +52,50 @@ permalink: "/blog/"
                 <h1 class="cs-title">No Recent Posts</h1>
             {% else %}
                 {%- for post in collections.post | reverse -%}
-                    <article class="cs-article">
+
+                        <article class="cs-article">
+                            {% if post.data.image %}
+                                <picture class="cs-article-image">
+                                    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt | default: post.data.title }}" width="824" height="400" decoding="async" loading="lazy">
+                                </picture>
+                            {% else %}
+                                <!-- Fallback image if no featured image is set -->
+                                <picture class="cs-article-image">
+                                    <img src="/assets/images/default-blog.jpg" alt="Blog post" width="824" height="400" decoding="async" loading="lazy">
+                                </picture>
+                            {% endif %}
+                            
+                            <div class="cs-article-group">
+                                <!-- Rest of your article content stays the same -->
+                                <div class="cs-author-group">
+                                    <picture class="cs-author-img">
+                                        <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
+                                    </picture>
+                                    <span class="cs-author-name">{{ post.data.author }}</span>
+                                    <span aria-hidden="true" class="cs-dot"></span>
+                                    <span class="cs-date">{{ post.date | postDate }}</span>
+                                </div>
+                                <h2 class="cs-article-title">
+                                    {{ post.data.title }}
+                                </h2>
+                                <p class="cs-article-desc">
+                                    {{ post.data.description }}
+                                </p>
+                                <a href="{{ post.url }}" class="cs-button-solid">Continue Reading</a>
+                            </div>
+                        </article>
+
+                    <!-- <article class="cs-article">
                         <picture class="cs-article-image">
-                            <!--Mobile Image-->
+                           
                             <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | avif %}" type="image/avif">
                             <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | webp %}" type="image/webp">
                             <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | jpeg %}" type="image/jpeg">
-                            <!--Tablet Image-->
+                       
                             <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | avif %}" type="image/avif">
                             <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | webp %}" type="image/webp">
                             <source media="(max-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1142, height: 614 }) | jpeg %}" type="image/jpeg">
-                            <!--Desktop Image-->
+                           
                             <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | avif %}" type="image/avif">
                             <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | webp %}" type="image/webp">
                             <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" type="image/jpeg">
@@ -85,7 +118,7 @@ permalink: "/blog/"
                             </p>
                             <a href="{{ post.url }}" class="cs-button-solid">Continue Reading</a>
                         </div>
-                    </article>
+                    </article> -->
                 {%- endfor -%}
             {% endif %}
         </div>
