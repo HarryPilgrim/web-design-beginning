@@ -609,7 +609,7 @@ body.dark-mode .wwd-portfolio-preview {
                 width: 100%;
                 height: 100%;
                 background: #000;
-                opacity: 0.7;
+                opacity: 0.4;
                 position: absolute;
                 display: block;
                 top: 0;
@@ -682,7 +682,7 @@ body.dark-mode .wwd-portfolio-preview {
 /* Desktop - 1300px (To make image background parallax) */
 @media only screen and (min-width: 81.25rem) {
     #hero-143 {
-        background: url("/assets/images/star-and-trees.jpg");
+        background: url("/assets/images/pillarssmall.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -708,7 +708,7 @@ body.dark-mode .wwd-portfolio-preview {
 
             .cs-background {
                 &:before {
-                    opacity: 0.85;
+                    opacity: 0.5;
                 }
             }
         }

@@ -1,8 +1,8 @@
 module.exports = {
     name: "Neon Flow Web Designs",
     email: "hello@neonflow.org",
-    phoneForTel: "+447754970564",
-    phoneFormatted: "+44 7754 970 564",
+    phoneForTel: "+447356271234",
+    phoneFormatted: "+44 7356 271 234",
     address: {
         lineOne: "Neon Flow",
         lineTwo: "Headquarters",

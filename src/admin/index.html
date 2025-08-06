@@ -20,7 +20,7 @@
     <!-- Documentation: https://decapcms.org/docs/customization/ -->
 
 
-<script type="text/babel">
+<!-- <script type="text/babel">
     const BlogPreview = ({ entry, getAsset }) => {
         const data = entry.getIn(['data']).toJS();
         const { title, author, date: rawDate, image, body } = data;
@@ -73,10 +73,10 @@
     // Register the preview
     CMS.registerPreviewTemplate("blog", BlogPreview);
     CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
-</script>
+</script> -->
 
 
-    <!-- <script type="text/babel">
+    <script type="text/babel">
         const BlogPreview = createClass({
             render: function () {
                 // Get all the props from the collection
@@ -120,7 +120,7 @@
         // Register the elements and styles for the "blog" collection
         CMS.registerPreviewTemplate("blog", BlogPreview);
         CMS.registerPreviewStyle("/admin/decap-preview-styles.css");
-    </script> -->
+    </script>
 </body>
 
 </html>
