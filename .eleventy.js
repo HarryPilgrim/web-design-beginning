@@ -32,6 +32,9 @@ module.exports = function (eleventyConfig) {
       // Ignore admin folder
     eleventyConfig.ignores.add("src/admin/**");
 
+      // Copy sitemap to root
+    eleventyConfig.addPassthroughCopy("src/sitemap.xml");
+
     /*
      * JavaScript & CSS Processing
      * These processors handle bundling, transpiling, and minification
