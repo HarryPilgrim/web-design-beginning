@@ -1,0 +1,87 @@
+{# Left-aligned portfolio project #}
+{% macro portfolioLeft(data) %}
+<section class="portfolio-project portfolio-left">
+    <div class="cs-container">
+        <div class="portfolio-content">
+            <!-- Computer Screen -->
+            <a href="{{ data.url }}" class="portfolio-computer-link" target="_blank" rel="noopener">
+                <div class="portfolio-computer">
+                    <div class="portfolio-screen">
+                        <img src="{{ data.image }}" alt="{{ data.imageAlt }}" loading="lazy">
+                    </div>
+                    <div class="portfolio-stand"></div>
+                    <div class="portfolio-base"></div>
+                </div>
+            </a>
+            
+            <!-- Project Info -->
+            <div class="portfolio-info">
+                <span class="portfolio-topper">{{ data.category }}</span>
+                <h2 class="portfolio-title">{{ data.title }}</h2>
+                <p class="portfolio-text">{{ data.description | safe }}</p>
+                
+                {% if data.techStack %}
+                <div class="portfolio-tech">
+                    {% for tech in data.techStack %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <a href="{{ data.url }}" class="cs-button-solid" target="_blank" rel="noopener">
+                    {{ data.buttonText or "Visit Website" }}
+                    <svg class="portfolio-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Background decoration -->
+    <div class="portfolio-bg-accent"></div>
+</section>
+{% endmacro %}
+
+{# Right-aligned portfolio project #}
+{% macro portfolioRight(data) %}
+<section class="portfolio-project portfolio-right">
+    <div class="cs-container">
+        <div class="portfolio-content">
+            <!-- Project Info -->
+            <div class="portfolio-info">
+                <span class="portfolio-topper">{{ data.category }}</span>
+                <h2 class="portfolio-title">{{ data.title }}</h2>
+                <p class="portfolio-text">{{ data.description | safe }}</p>
+                
+                {% if data.techStack %}
+                <div class="portfolio-tech">
+                    {% for tech in data.techStack %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <a href="{{ data.url }}" class="cs-button-solid" target="_blank" rel="noopener">
+                    {{ data.buttonText or "Visit Website" }}
+                    <svg class="portfolio-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Computer Screen -->
+            <a href="{{ data.url }}" class="portfolio-computer-link" target="_blank" rel="noopener">
+                <div class="portfolio-computer">
+                    <div class="portfolio-screen">
+                        <img src="{{ data.image }}" alt="{{ data.imageAlt }}" loading="lazy">
+                    </div>
+                    <div class="portfolio-stand"></div>
+                    <div class="portfolio-base"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Background decoration -->
+    <div class="portfolio-bg-accent"></div>
+</section>
+{% endmacro %}

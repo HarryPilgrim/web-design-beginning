@@ -5,7 +5,7 @@ permalink: "/portfolio/"
 ---
 
 {% extends "layouts/base.html" %}
-
+{% from "layouts/portfolio-previews.html" import portfolioLeft, portfolioRight %}
 {% block head %}
     <link rel="preload" as="image" href="{% getUrl "/assets/images/green-building.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
     <link rel="stylesheet" href="/assets/css/portfolio.css">
@@ -88,6 +88,31 @@ A secure social media site for poetry lovers with 400+ users. Visitors can read,
         <!-- Background decoration -->
         <div class="portfolio-bg-accent"></div>
     </section>
+
+<!-- ============================================ -->
+<!--              Portfolio EXTRA right then left            -->
+<!-- ============================================ -->
+
+{{ portfolioLeft({
+    category: "Rapid Web Prototype",
+    title: "AI Toybox",
+    description: "A quick prototype showcasing modern AI tools and services in an interactive playground format. Built rapidly using Webflow's visual development platform to demonstrate fast iteration and responsive design capabilities for client presentations.",
+    image: "/assets/images/portfolio/toybox.jpg",
+    url: "https://ai-toy-company.webflow.io/",
+    techStack: ["Webflow", "Responsive Design", "Rapid Prototyping", "AI Integration"],
+    buttonText: "View Prototype"
+}) }}
+
+
+{{ portfolioRight({
+    category: "Static Site Development",
+    title: "Rapid Crash Repair - Work in Progress",
+    description: "A modern automotive repair website built with Eleventy static site generator. Features integrated Google Maps for easy location finding, responsive design for mobile users, and optimized performance. Currently showcasing ongoing development and modern web practices.",
+    image: "/assets/images/portfolio/rapidcrashrepair-home.jpg",
+    url: "https://rapidcrashrepair.netlify.app/",
+    techStack: ["Eleventy", "SCSS", "Google Maps Embed", "Netlify Deployment"],
+    buttonText: "View Live Site"
+}) }}
 
 <!-- ============================================ -->
 <!--              Portfolio Project 2             -->
