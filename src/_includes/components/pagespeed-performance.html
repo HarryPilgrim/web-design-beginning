@@ -1,0 +1,68 @@
+<section id="pagespeed-performance" class="ps-performance">
+    <div class="ps-container">
+        <div class="ps-content">
+            <div class="ps-grid">
+                <!-- Left: Image Section -->
+                <div class="ps-image-wrapper">
+                    <div class="ps-image-group">
+                        <picture class="ps-picture">
+                            <source srcset="{% getUrl "/assets/images/webspeed-desktop.jpg" | resize({ width: 600 }) | avif %}" type="image/avif">
+                            <source srcset="{% getUrl "/assets/images/webspeed-desktop.jpg" | resize({ width: 600 }) | webp %}" type="image/webp">
+                            <img src="{% getUrl "/assets/images/webspeed-desktop.jpg" | resize({ width: 600 }) | jpeg %}" 
+                                alt="PageSpeed Insights showing 95+ performance scores" 
+                                width="600" 
+                                height="400" 
+                                loading="lazy" 
+                                decoding="async">
+                        </picture>
+                        <div class="ps-score-badge">
+                            <span class="ps-score">95+</span>
+                            <span class="ps-label">Performance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content Section -->
+                <div class="ps-text-wrapper">
+                    <h2 class="ps-title">
+                        <span class="ps-title-accent">Performance</span>
+                        We Build Lightning-Fast Websites
+                    </h2>
+                    
+                    <p class="ps-description">
+                        We consistently achieve 95+ Google PageSpeed scores. Fast load times aren't just numbers – they're better user experiences and higher conversions.
+                    </p>
+
+                    <ul class="ps-benefits">
+                        <li class="ps-benefit">
+                            <span class="ps-icon">▶</span>
+                            <span>Faster load times increase traffic and conversions</span>
+                        </li>
+                        <li class="ps-benefit">
+                            <span class="ps-icon">▶</span>
+                            <span>Speed boosts SEO and Google Ads performance</span>
+                        </li>
+                        <li class="ps-benefit">
+                            <span class="ps-icon">▶</span>
+                            <span>Sub-second load times for optimal user experience</span>
+                        </li>
+                    </ul>
+
+                    <div class="ps-cta-group">
+                        <a href="https://pagespeed.web.dev/analysis/https-neonflow-org/whxr9vyfq0?form_factor=mobile" 
+                           class="ps-button ps-button-primary" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="View our PageSpeed results">
+                            View Our Results
+                        </a>
+                        
+                        <p class="ps-cta-text">
+                            Running WordPress? Check if your site is slowing you down!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

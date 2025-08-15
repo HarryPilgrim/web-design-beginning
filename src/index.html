@@ -8,7 +8,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" href="/fonts/roboto-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/roboto-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Critical styles are loaded first -->
     <link rel="stylesheet" href="/assets/css/critical.css"/>
 
@@ -31,7 +31,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <!-- web page assembly  -->
     <link rel="stylesheet" href="/assets/css/wwd-website-assembly.css"/>
     <link rel="stylesheet" href="/assets/css/usp-text.css">
-
+    <link rel="stylesheet" href="/assets/css/pagespeed-performance.css">
     <link rel="stylesheet" href="/assets/css/about.css">
 
     <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
@@ -419,6 +419,9 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 </section>
 
 {% include 'components/usp-text.html' %}
+
+
+{% include 'components/pagespeed-performance.html' %}
 
 
     <!-- ============================================ -->
