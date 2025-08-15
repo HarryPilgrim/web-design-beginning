@@ -8,6 +8,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <link rel="preload" href="/fonts/roboto-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Critical styles are loaded first -->
     <link rel="stylesheet" href="/assets/css/critical.css"/>
 
@@ -78,7 +79,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/pillarssmall.jpg" | resize({ width: 1920, height: 1080 }) | avif %}" type="image/avif">
         <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/pillarssmall.jpg" | resize({ width: 1920, height: 1080 }) | webp %}" type="image/webp">
         <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/pillarssmall.jpg" | resize({ width: 1920, height: 1080 }) | jpeg %}" type="image/jpeg">
-        <img src="{% getUrl "/assets/images/pillarssmall.jpg" | resize({ width: 1920, height: 1080 }) | jpeg %}" alt="Starry night sky with trees" width="1920" height="1080" loading="eager" decoding="async">
+        <img src="{% getUrl "/assets/images/pillarssmall.jpg" | resize({ width: 1920, height: 1080 }) | jpeg %}" alt="Starry night sky with trees" width="1920" height="1080" loading="eager" decoding="async" fetchpriority=high>
     </picture>
 </section>
 
