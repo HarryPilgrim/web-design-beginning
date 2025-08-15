@@ -346,6 +346,8 @@ body.dark-mode {
 
 }
 
+
+
 .ps-picture img.loaded {
     opacity: 1;
 }
@@ -436,5 +438,94 @@ body.dark-mode {
     
     .ps-text-wrapper {
         max-width: 700px;
+    }
+}
+
+/* Make all text in the text wrapper larger */
+.ps-text-wrapper {
+    max-width: 600px;
+}
+
+/* Bigger title */
+.ps-title {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Increased from 1.75rem → 2rem minimum, 2.5rem → 3.5rem max */
+    font-weight: 900;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.1; /* Tighter line height for larger text */
+}
+
+.ps-title-accent {
+    display: block;
+    color: var(--neon-green);
+    text-shadow: 0 0 20px var(--neon-green-dim);
+    font-size: 1.25rem; /* Increased from 1rem */
+    text-transform: uppercase;
+    letter-spacing: 3px; /* More spacing */
+    margin-bottom: 0.5rem;
+}
+
+/* Bigger description */
+.ps-description {
+    font-size: 1.375rem; /* Increased from 1.125rem */
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Bigger benefits */
+.ps-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem; /* More space between items */
+    color: var(--text-gray);
+    line-height: 1.5;
+    font-size: 1.125rem; /* Added font size */
+}
+
+.ps-icon {
+    color: var(--neon-green);
+    font-size: 1.125rem; /* Increased from 0.875rem */
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    text-shadow: 0 0 5px var(--neon-green-dim);
+}
+
+/* Bigger button */
+.ps-button {
+    display: inline-block;
+    padding: 1.25rem 2.5rem; /* Increased padding */
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem; /* Increased from 0.875rem */
+}
+
+/* Bigger CTA text */
+.ps-cta-text {
+    margin-top: 1.25rem;
+    font-size: 1rem; /* Increased from 0.875rem */
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+/* Adjust for mobile to prevent text being too large */
+@media (max-width: 768px) {
+    .ps-title {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+    
+    .ps-description {
+        font-size: 1.125rem;
+    }
+    
+    .ps-benefit {
+        font-size: 1rem;
     }
 }
