@@ -12,14 +12,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <!-- Critical styles are loaded first -->
     <link rel="stylesheet" href="/assets/css/critical.css"/>
 
-        <!-- Interactive Hero Styles -->
-    <link rel="stylesheet" href="/assets/css/wwd-matrix-reveal.css"/>
 
-        <!-- web page assembly  -->
-    <link rel="stylesheet" href="/assets/css/wwd-website-assembly.css"/>
-    <link rel="stylesheet" href="/assets/css/usp-text.css">
-
-    <link rel="stylesheet" href="/assets/css/about.css">
 
     <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
     {% if kit.isProduction %}
@@ -31,6 +24,15 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     {% else %}
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
+
+            <!-- Interactive Hero Styles -->
+    <link rel="stylesheet" href="/assets/css/wwd-matrix-reveal.css"/>
+
+        <!-- web page assembly  -->
+    <link rel="stylesheet" href="/assets/css/wwd-website-assembly.css"/>
+    <link rel="stylesheet" href="/assets/css/usp-text.css">
+
+    <link rel="stylesheet" href="/assets/css/about.css">
 
     <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
     <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
