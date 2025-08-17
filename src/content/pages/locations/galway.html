@@ -1,0 +1,65 @@
+---
+title: "Web Design Galway | Professional Website Design Services"
+description: "Professional web design services in Galway, Ireland's Cultural Heart. Help your Galway business capture the spirit of the west online."
+permalink: "/galway/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Galway",
+    county = "County Galway",
+    region = "Connacht",
+    nearbyAreas = ["Salthill", "Oranmore", "Athenry", "Tuam"],
+    businessTypes = [
+        {
+            name: "Arts & Culture",
+            description: "Galway's vibrant arts scene needs creative digital presence.",
+            features: ["Event calendars", "Ticket sales", "Gallery sections", "Artist profiles"]
+        },
+        {
+            name: "Tourism & Wild Atlantic Way",
+            description: "Gateway to the Wild Atlantic Way - capture tourist traffic online.",
+            features: ["Tour booking", "Accommodation", "Activity packages", "Itinerary builders"]
+        },
+        {
+            name: "Medical Devices & Tech",
+            description: "Galway's medtech cluster needs professional B2B websites.",
+            features: ["Product showcases", "Technical specs", "Partner portals", "Resource libraries"]
+        },
+        {
+            name: "Student Services",
+            description: "With NUIG and GMIT, businesses serving students need modern sites.",
+            features: ["Student offers", "Online booking", "Event promotion", "Mobile-first design"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "2.5M",
+            title: "Annual Tourists",
+            description: "Galway attracts millions exploring the Wild Atlantic Way.",
+            outcome: "Massive tourism market"
+        },
+        {
+            metric: "Cultural",
+            title: "Capital 2020",
+            description: "Galway's cultural reputation brings global attention.",
+            outcome: "International visibility"
+        },
+        {
+            metric: "Youngest",
+            title: "City in Ireland",
+            description: "Galway has Ireland's youngest population - digital natives.",
+            outcome: "Tech-ready customers"
+        }
+    ]
+) }}
+
+{% endblock %}

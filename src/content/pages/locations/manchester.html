@@ -1,0 +1,65 @@
+---
+title: "Web Design Manchester | Professional Website Design Services"
+description: "Professional web design services in Manchester. Help your Manchester business compete in the digital economy with a powerful online presence."
+permalink: "/manchester/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Manchester",
+    county = "Greater Manchester",
+    region = "North West England",
+    nearbyAreas = ["Salford", "Stockport", "Bolton", "Oldham"],
+    businessTypes = [
+        {
+            name: "Creative Agencies",
+            description: "Manchester's MediaCity and creative quarter businesses need portfolios that impress.",
+            features: ["Portfolio galleries", "Case study sections", "Client testimonials", "Creative layouts"]
+        },
+        {
+            name: "Independent Shops",
+            description: "From Northern Quarter boutiques to Ancoats artisans, stand out online.",
+            features: ["E-commerce ready", "Instagram integration", "Blog sections", "Email marketing"]
+        },
+        {
+            name: "Music & Events",
+            description: "In the city of music, venues and promoters need websites that rock.",
+            features: ["Ticket integration", "Event listings", "Media players", "Newsletter signup"]
+        },
+        {
+            name: "Professional Services",
+            description: "Manchester's business district professionals need credible online presence.",
+            features: ["Service pages", "Team profiles", "Resource centers", "Client portals"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "70%",
+            title: "Mobile First",
+            description: "Most Mancunians browse on mobile devices while commuting.",
+            outcome: "Responsive design crucial"
+        },
+        {
+            metric: "£2.5bn",
+            title: "Digital Economy",
+            description: "Manchester's digital sector worth - your business can tap into this.",
+            outcome: "Join the digital revolution"
+        },
+        {
+            metric: "24hrs",
+            title: "Competition Response",
+            description: "How quickly Manchester businesses need to respond online.",
+            outcome: "Automated features help"
+        }
+    ]
+) }}
+
+{% endblock %}

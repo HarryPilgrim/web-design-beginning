@@ -1,0 +1,27 @@
+{
+  "england": {
+    "name": "England",
+    "cities": [
+      {"name": "Darlington", "slug": "darlington"},
+      {"name": "Durham", "slug": "durham"},
+      {"name": "Newcastle", "slug": "newcastle"},
+      {"name": "Manchester", "slug": "manchester"},
+      {"name": "Leeds", "slug": "leeds"},
+      {"name": "York", "slug": "york"},
+      {"name": "Sheffield", "slug": "sheffield"},
+      {"name": "Birmingham", "slug": "birmingham"},
+      {"name": "Liverpool", "slug": "liverpool"},
+      {"name": "London", "slug": "london"}
+    ]
+  },
+  "ireland": {
+    "name": "Ireland",
+    "cities": [
+      {"name": "Cavan", "slug": "cavan"},
+      {"name": "Dublin", "slug": "dublin"},
+      {"name": "Cork", "slug": "cork"},
+      {"name": "Galway", "slug": "galway"},
+      {"name": "Waterford", "slug": "waterford"}
+    ]
+  }
+}

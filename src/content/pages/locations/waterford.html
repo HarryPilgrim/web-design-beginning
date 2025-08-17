@@ -1,0 +1,65 @@
+---
+title: "Web Design Waterford | Professional Website Design Services"
+description: "Professional web design services in Waterford, Ireland's oldest city. Help your Waterford business blend heritage with modern digital presence."
+permalink: "/waterford/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Waterford",
+    county = "County Waterford",
+    region = "Munster",
+    nearbyAreas = ["Tramore", "Dungarvan", "Lismore", "Passage East"],
+    businessTypes = [
+        {
+            name: "Crystal & Crafts",
+            description: "Waterford's craft heritage can reach global markets online.",
+            features: ["E-commerce", "Virtual showrooms", "Craft stories", "International shipping"]
+        },
+        {
+            name: "Tourism & Heritage",
+            description: "Viking Triangle to Copper Coast - showcase Waterford's history online.",
+            features: ["Virtual tours", "Heritage trails", "Booking systems", "Event calendars"]
+        },
+        {
+            name: "Food & Blaa",
+            description: "From the famous Blaa to artisan producers, sell Waterford's taste online.",
+            features: ["Online orders", "Local delivery", "Product stories", "Recipe sections"]
+        },
+        {
+            name: "Education & Services",
+            description: "With WIT and growing tech sector, serve Waterford's modern economy.",
+            features: ["Service portals", "Online courses", "Resource centers", "Booking systems"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "Viking",
+            title: "Heritage",
+            description: "Waterford's 1100-year history attracts heritage tourists.",
+            outcome: "Unique selling point"
+        },
+        {
+            metric: "Coastal",
+            title: "Location",
+            description: "Copper Coast UNESCO Geopark brings nature tourists.",
+            outcome: "Tourism opportunity"
+        },
+        {
+            metric: "Growing",
+            title: "Tech Sector",
+            description: "Waterford's tech scene is expanding rapidly.",
+            outcome: "Digital growth market"
+        }
+    ]
+) }}
+
+{% endblock %}

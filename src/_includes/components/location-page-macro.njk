@@ -1,0 +1,191 @@
+{% macro locationPage(city, county, region, nearbyAreas, businessTypes, possibilities) %}
+
+
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-310">
+    <div class="cs-container">
+        <span class="cs-int-title">Web Design {{ city }}</span>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">Home</a>
+            <a href="/locations/" class="cs-link">Locations</a>
+            <a href="/{{ city | lower | replace(' ', '-') }}/web-design/" class="cs-link cs-active">{{ city }}</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/greenwater.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="web design {{ city }}" width="1920" height="482" loading="eager" decoding="async">
+    </picture>
+</div>
+
+<!-- ============================================ -->
+<!--              Hero Stats Section              -->
+<!-- ============================================ -->
+
+<section id="location-hero" class="location-hero-section">
+    <div class="cs-container">
+        <div class="location-hero-content">
+            <h1 class="location-hero-title">Professional Web Design in {{ city }}, {{ county }}</h1>
+            <p class="location-hero-subtitle">
+                Transform your {{ city }} business with a modern website that works 24/7. 
+                We create stunning, mobile-responsive websites that convert {{ city }} visitors into customers.
+            </p>
+            <div class="location-stats-grid">
+                <div class="location-stat">
+                    <span class="location-stat-number">24/7</span>
+                    <span class="location-stat-text">Always working for your {{ city }} business</span>
+                </div>
+                <div class="location-stat">
+                    <span class="location-stat-number">100%</span>
+                    <span class="location-stat-text">Mobile responsive design</span>
+                </div>
+                <div class="location-stat">
+                    <span class="location-stat-number">Fast</span>
+                    <span class="location-stat-text">Lightning quick load times</span>
+                </div>
+            </div>
+            <div class="location-cta-buttons">
+                <a href="/contact/" class="cs-button-solid">Get Your Quote</a>
+                <a href="/portfolio/" class="cs-button-solid">View Our Work</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Local Services Section           -->
+<!-- ============================================ -->
+
+<section id="location-services" class="location-services-section">
+    <div class="cs-container">
+        <div class="location-section-header">
+            <span class="location-topper">{{ city }} Web Design Services</span>
+            <h2 class="location-title">Websites That Work for {{ city }} Businesses</h2>
+            <p class="location-intro">
+                We understand the {{ city }} market. From {{ nearbyAreas | join(', ') }}, 
+                we've helped local businesses dominate online.
+            </p>
+        </div>
+
+        <div class="location-services-grid">
+            <div class="location-service">
+                <div class="location-icon-wrapper">
+                    <svg class="location-icon" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#00ff00"/>
+                    </svg>
+                </div>
+                <h3>Custom Design for {{ city }}</h3>
+                <p>Every {{ city }} business is unique. We create bespoke designs that reflect your brand and appeal to local customers.</p>
+            </div>
+
+            <div class="location-service">
+                <div class="location-icon-wrapper">
+                    <svg class="location-icon" viewBox="0 0 24 24">
+                        <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zM7 4V3h10v1H7zM7 18V6h10v12H7z" fill="#00ff00"/>
+                    </svg>
+                </div>
+                <h3>Mobile-First Development</h3>
+                <p>Most {{ city }} customers browse on mobile. Your website will look perfect on every device.</p>
+            </div>
+
+            <div class="location-service">
+                <div class="location-icon-wrapper">
+                    <svg class="location-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#00ff00"/>
+                    </svg>
+                </div>
+                <h3>Local SEO for {{ city }}</h3>
+                <p>Dominate "{{ city }} [your service]" searches. We optimize your site to be found by local customers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Local Business Types              -->
+<!-- ============================================ -->
+
+<section id="location-business-types" class="location-business-section">
+    <div class="cs-container">
+        <div class="location-section-header">
+            <span class="location-topper">{{ city }} Business Websites</span>
+            <h2 class="location-title">We Design Websites for All {{ city }} Industries</h2>
+        </div>
+
+        <div class="location-business-grid">
+            {% for business in businessTypes %}
+            <div class="location-business-card">
+                <h3>{{ business.name }}</h3>
+                <p>{{ business.description | replace('[city]', city) }}</p>
+                <ul class="location-business-features">
+                    {% for feature in business.features %}
+                    <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            What's Possible Section          -->
+<!-- ============================================ -->
+
+<section id="location-results" class="location-results-section">
+    <div class="cs-container">
+        <div class="location-section-header">
+            <span class="location-topper">The Opportunity</span>
+            <h2 class="location-title">What's Possible for {{ city }} Businesses</h2>
+            <p class="location-intro">
+                Based on industry data and online trends, here's what a professional website 
+                can do for businesses in {{ city }}.
+            </p>
+        </div>
+
+        <div class="location-results-grid">
+            {% for item in possibilities %}
+            <div class="location-result-card">
+                <div class="location-result-metric">{{ item.metric }}</div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <div class="location-result-outcome">{{ item.outcome }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================ -->
+<!--                Local CTA                    -->
+<!-- ============================================ -->
+
+<section id="location-cta" class="location-cta-section">
+    <div class="cs-container">
+        <div class="location-cta-content">
+            <h2 class="location-cta-title">Ready to Dominate {{ city }} Online?</h2>
+            <p class="location-cta-text">
+                Join the {{ city }} businesses already winning with professional websites. 
+                Get your free quote today and see how we can transform your online presence.
+            </p>
+            <div class="location-cta-buttons">
+                <a href="/contact/" class="cs-button-solid">Get Free Quote</a>
+                <a href="tel:+447356271234" class="cs-button-solid">Call Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endmacro %}

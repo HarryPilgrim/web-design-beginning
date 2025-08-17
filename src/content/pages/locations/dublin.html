@@ -1,0 +1,65 @@
+---
+title: "Web Design Dublin | Professional Website Design Services"
+description: "Professional web design services in Dublin. Help your Dublin business reach customers across Ireland and beyond with a modern website."
+permalink: "/dublin/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Dublin",
+    county = "County Dublin",
+    region = "Leinster",
+    nearbyAreas = ["Dún Laoghaire", "Swords", "Tallaght", "Blanchardstown"],
+    businessTypes = [
+        {
+            name: "Tech Companies",
+            description: "Join Dublin's Silicon Docks tech scene with a cutting-edge website.",
+            features: ["Modern frameworks", "API integrations", "Cloud hosting", "Performance focused"]
+        },
+        {
+            name: "Tourism & Hospitality",
+            description: "Temple Bar to Trinity College - capture Dublin's tourist market online.",
+            features: ["Booking systems", "Virtual tours", "Multi-currency", "Review integration"]
+        },
+        {
+            name: "Local Services",
+            description: "From Grafton Street to Phoenix Park, Dublin businesses can expand digitally.",
+            features: ["Service areas", "Online quotes", "Appointment booking", "Customer reviews"]
+        },
+        {
+            name: "Food & Drink",
+            description: "Dublin's vibrant food scene needs appetizing websites.",
+            features: ["Online menus", "Table reservations", "Delivery integration", "Gallery sections"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "93%",
+            title: "Internet Usage",
+            description: "Dublin has one of Europe's highest internet usage rates.",
+            outcome: "Huge online audience"
+        },
+        {
+            metric: "€4.2bn",
+            title: "E-commerce Market",
+            description: "Ireland's online shopping market is booming.",
+            outcome: "Get your share"
+        },
+        {
+            metric: "Global",
+            title: "Reach",
+            description: "Dublin businesses can easily serve EU and UK markets online.",
+            outcome: "Expand beyond borders"
+        }
+    ]
+) }}
+
+{% endblock %}

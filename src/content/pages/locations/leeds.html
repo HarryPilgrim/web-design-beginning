@@ -1,0 +1,65 @@
+---
+title: "Web Design Leeds | Professional Website Design Services"
+description: "Professional web design services in Leeds, West Yorkshire. Help your Leeds business thrive in Yorkshire's digital economy with a modern website."
+permalink: "/leeds/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Leeds",
+    county = "West Yorkshire",
+    region = "Yorkshire",
+    nearbyAreas = ["Bradford", "Wakefield", "Harrogate", "Wetherby"],
+    businessTypes = [
+        {
+            name: "Financial Services",
+            description: "Leeds is the UK's second-largest financial center. Stand out in this competitive sector.",
+            features: ["Secure portals", "Resource centers", "Calculator tools", "Compliance ready"]
+        },
+        {
+            name: "Retail & Fashion",
+            description: "From Victoria Quarter to Trinity Leeds, retail businesses can expand online.",
+            features: ["E-commerce platforms", "Size guides", "Wishlist features", "Stock management"]
+        },
+        {
+            name: "Legal Services",
+            description: "Leeds' legal quarter businesses need professional, trustworthy websites.",
+            features: ["Service pages", "Team directories", "Case study sections", "Client resources"]
+        },
+        {
+            name: "Student Services",
+            description: "With multiple universities, businesses serving students need modern web presence.",
+            features: ["Mobile-first design", "Online bookings", "Student portals", "Event listings"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "£2.1bn",
+            title: "Digital Sector Value",
+            description: "Leeds' digital economy is booming - be part of it.",
+            outcome: "Growing market opportunity"
+        },
+        {
+            metric: "500k+",
+            title: "Working Population",
+            description: "Leeds has one of the UK's largest working populations to reach.",
+            outcome: "Massive local audience"
+        },
+        {
+            metric: "85%",
+            title: "Shop Online",
+            description: "Most Leeds residents regularly purchase online.",
+            outcome: "E-commerce essential"
+        }
+    ]
+) }}
+
+{% endblock %}

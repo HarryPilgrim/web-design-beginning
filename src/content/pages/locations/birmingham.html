@@ -1,0 +1,65 @@
+---
+title: "Web Design Birmingham | Professional Website Design Services"
+description: "Professional web design services in Birmingham, West Midlands. Help your Birmingham business compete in the UK's second city."
+permalink: "/birmingham/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Birmingham",
+    county = "West Midlands",
+    region = "West Midlands",
+    nearbyAreas = ["Solihull", "Sutton Coldfield", "Wolverhampton", "Coventry"],
+    businessTypes = [
+        {
+            name: "Business Services",
+            description: "Birmingham's business district needs professional B2B websites.",
+            features: ["Lead generation", "Service portals", "Integration tools", "Client dashboards"]
+        },
+        {
+            name: "Jewellery Quarter",
+            description: "Historic jewellery businesses can shine online with e-commerce.",
+            features: ["Product galleries", "Secure checkout", "Custom orders", "Virtual consultations"]
+        },
+        {
+            name: "Restaurants & Culture",
+            description: "From Balti Triangle to Digbeth, Birmingham's culture needs digital presence.",
+            features: ["Online reservations", "Event promotion", "Gallery sections", "Social integration"]
+        },
+        {
+            name: "Retail & Shopping",
+            description: "From Bullring to independent shops, compete with online presence.",
+            features: ["E-commerce", "Click & collect", "Store locators", "Loyalty programs"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "1.1M",
+            title: "Population",
+            description: "UK's second-largest city offers massive local market.",
+            outcome: "Huge customer base"
+        },
+        {
+            metric: "£31bn",
+            title: "Economy Size",
+            description: "Birmingham's economy is vast and diverse.",
+            outcome: "Opportunities everywhere"
+        },
+        {
+            metric: "Young",
+            title: "Demographics",
+            description: "40% of Birmingham's population is under 25 - digital natives.",
+            outcome: "Tech-ready audience"
+        }
+    ]
+) }}
+
+{% endblock %}

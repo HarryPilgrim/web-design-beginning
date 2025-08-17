@@ -63,6 +63,30 @@
                             Why Upgrade?
                         </a>
                     </li>
+
+<li class="cs-li cs-dropdown" tabindex="0">
+    <span class="cs-li-link">
+        Locations
+        <img class="cs-drop-icon" src="/assets/svgs/dropdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+    </span>
+    <ul class="cs-drop-ul">
+        {% for country, data in locations %}
+        <li class="cs-drop-li cs-nested-dropdown">
+            <span class="cs-drop-link cs-country-link">
+                {{ data.name }}
+                <img class="cs-drop-icon-nested" src="/assets/svgs/dropdown.svg" alt="dropdown icon" width="12" height="12">
+            </span>
+            <ul class="cs-nested-ul">
+                {% for city in data.cities %}
+                <li class="cs-nested-li">
+                    <a href="/{{ city.slug }}/web-design/" class="cs-nested-link">{{ city.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</li>
                     <!-- <li class="cs-li">
                         <a href="/reviews/" class="cs-li-link {% if page.url == "/reviews/" %} cs-active {% endif %}">
                             Reviews

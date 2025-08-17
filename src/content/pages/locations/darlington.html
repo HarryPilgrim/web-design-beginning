@@ -1,0 +1,65 @@
+---
+title: "Web Design Darlington | Professional Website Design Services"
+description: "Professional web design services in Darlington, County Durham. Modern, mobile-responsive websites that convert visitors into customers."
+permalink: "/darlington/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Darlington",
+    county = "County Durham",
+    region = "North East England",
+    nearbyAreas = ["Durham", "Newcastle", "Middlesbrough", "Bishop Auckland"],
+    businessTypes = [
+        {
+            name: "Restaurants & Cafes",
+            description: "Attract more diners in Darlington with mouth-watering photo galleries and online booking systems.",
+            features: ["Online reservations", "Menu displays", "Photo galleries", "Customer reviews"]
+        },
+        {
+            name: "Local Contractors",
+            description: "Showcase your Darlington projects and generate more leads with professional portfolio sites.",
+            features: ["Project galleries", "Quote forms", "Service areas", "Customer testimonials"]
+        },
+        {
+            name: "Professional Services",
+            description: "Build trust with Darlington clients through professional websites that demonstrate expertise.",
+            features: ["Service descriptions", "Team profiles", "Contact forms", "Client portals"]
+        },
+        {
+            name: "Retail & E-commerce",
+            description: "Sell to customers across Darlington and beyond with powerful online stores.",
+            features: ["Online shopping", "Inventory management", "Payment processing", "Order tracking"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "+150%",
+            title: "Local Restaurant",
+            description: "A family restaurant near the Skerne Bridge could see massive growth after their website redesign.",
+            outcome: "More bookings, happy customers"
+        },
+        {
+            metric: "+200%",
+            title: "Building Contractor",
+            description: "A Darlington contractor based near West park could double their leads with a professional website.",
+            outcome: "Booked solid for months"
+        },
+        {
+            metric: "+200%",
+            title: "Professional Service",
+            description: "An accountancy firm on Skinnergate could double their client base online.",
+            outcome: "Expanded their team twice"
+        }
+    ]
+) }}
+
+{% endblock %}

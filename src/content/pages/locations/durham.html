@@ -1,0 +1,65 @@
+---
+title: "Web Design Durham | Professional Website Design Services"
+description: "Professional web design services in Durham. Modern, mobile-responsive websites that help Durham businesses attract more customers online."
+permalink: "/durham/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Durham",
+    county = "County Durham",
+    region = "North East England",
+    nearbyAreas = ["Newcastle", "Sunderland", "Chester-le-Street", "Consett"],
+    businessTypes = [
+        {
+            name: "University & Student Services",
+            description: "With Durham University at the heart of the city, businesses serving students and academics need modern websites.",
+            features: ["Mobile-first design", "Online bookings", "Student discounts", "Event calendars"]
+        },
+        {
+            name: "Tourism & Heritage",
+            description: "Durham's cathedral and castle attract thousands of visitors. Your website can capture this tourist trade.",
+            features: ["Virtual tours", "Booking systems", "Multi-language options", "Interactive maps"]
+        },
+        {
+            name: "Local Retailers",
+            description: "From the Market Place to Prince Bishops Shopping Centre, Durham retailers can expand online.",
+            features: ["E-commerce integration", "Click & collect", "Local delivery options", "Inventory management"]
+        },
+        {
+            name: "Professional Services",
+            description: "Durham's growing business community needs professional websites that build credibility.",
+            features: ["Service showcases", "Contact forms", "Client portals", "Resource libraries"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "60%",
+            title: "More Mobile Traffic",
+            description: "Most Durham residents search for local services on their phones.",
+            outcome: "Mobile-responsive design essential"
+        },
+        {
+            metric: "24/7",
+            title: "Always Open",
+            description: "While shops on Silver Street close, your website keeps working.",
+            outcome: "Capture after-hours enquiries"
+        },
+        {
+            metric: "3 sec",
+            title: "First Impressions",
+            description: "That's how long visitors take to judge your Durham business online.",
+            outcome: "Professional design matters"
+        }
+    ]
+) }}
+
+{% endblock %}

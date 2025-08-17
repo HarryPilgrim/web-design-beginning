@@ -1,0 +1,65 @@
+---
+title: "Web Design York | Professional Website Design Services"
+description: "Professional web design services in York, North Yorkshire. Help your historic York business blend tradition with modern digital presence."
+permalink: "/york/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "York",
+    county = "North Yorkshire",
+    region = "Yorkshire",
+    nearbyAreas = ["Selby", "Tadcaster", "Pocklington", "Easingwold"],
+    businessTypes = [
+        {
+            name: "Tourism & Heritage",
+            description: "York attracts 7 million visitors annually. Capture this market online.",
+            features: ["Virtual tours", "Booking systems", "Interactive maps", "Multi-language support"]
+        },
+        {
+            name: "Independent Shops",
+            description: "From The Shambles to Fossgate, York's unique shops can reach beyond tourists.",
+            features: ["Online shopping", "Gift vouchers", "Local delivery", "Product stories"]
+        },
+        {
+            name: "Restaurants & Cafes",
+            description: "York's food scene is thriving. Stand out with an appetizing web presence.",
+            features: ["Online menus", "Table booking", "Dietary filters", "Review displays"]
+        },
+        {
+            name: "Professional Services",
+            description: "York's growing business community needs credible digital presence.",
+            features: ["Service showcases", "Online consultations", "Resource libraries", "Contact forms"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "7M",
+            title: "Annual Visitors",
+            description: "York's tourist numbers offer huge potential for online bookings.",
+            outcome: "Tap into tourist spend"
+        },
+        {
+            metric: "Historic",
+            title: "Meets Modern",
+            description: "Visitors expect modern convenience from historic York businesses.",
+            outcome: "Bridge old and new"
+        },
+        {
+            metric: "94%",
+            title: "Pre-Visit Research",
+            description: "Nearly all tourists research York businesses online first.",
+            outcome: "First impressions count"
+        }
+    ]
+) }}
+
+{% endblock %}

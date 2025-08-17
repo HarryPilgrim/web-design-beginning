@@ -1,0 +1,65 @@
+---
+title: "Web Design Cork | Professional Website Design Services"
+description: "Professional web design services in Cork, Ireland's second city. Help your Cork business compete in Munster's thriving digital economy."
+permalink: "/cork/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Cork",
+    county = "County Cork",
+    region = "Munster",
+    nearbyAreas = ["Cobh", "Midleton", "Mallow", "Carrigaline"],
+    businessTypes = [
+        {
+            name: "Pharma & Tech",
+            description: "Cork's pharmaceutical and tech sectors need professional B2B websites.",
+            features: ["Corporate design", "Resource centers", "Career portals", "News sections"]
+        },
+        {
+            name: "Food & Hospitality",
+            description: "From the English Market to Kinsale restaurants, Cork's food scene can thrive online.",
+            features: ["Online menus", "Table booking", "Food tours", "Local produce focus"]
+        },
+        {
+            name: "Maritime & Port",
+            description: "Cork's port businesses and maritime services can expand their reach.",
+            features: ["Service information", "Shipping tools", "Port schedules", "B2B portals"]
+        },
+        {
+            name: "Retail & Markets",
+            description: "From Patrick Street to local markets, Cork retailers can grow online.",
+            features: ["Online shopping", "Click & collect", "Market schedules", "Local delivery"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "210k",
+            title: "City Population",
+            description: "Cork city and suburbs offer a large, educated market.",
+            outcome: "Tech-savvy audience"
+        },
+        {
+            metric: "€20bn",
+            title: "Exports",
+            description: "Cork's export economy shows its global connections.",
+            outcome: "International potential"
+        },
+        {
+            metric: "Rebel",
+            title: "Spirit",
+            description: "Cork's independent spirit means supporting local online.",
+            outcome: "Local loyalty advantage"
+        }
+    ]
+) }}
+
+{% endblock %}

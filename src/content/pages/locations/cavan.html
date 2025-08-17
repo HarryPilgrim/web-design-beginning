@@ -1,0 +1,65 @@
+---
+title: "Web Design Cavan | Professional Website Design Services"
+description: "Professional web design services in Cavan, Ireland. Help your Cavan business reach customers across Ireland with a modern website."
+permalink: "/cavan/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Cavan",
+    county = "County Cavan",
+    region = "Ulster",
+    nearbyAreas = ["Virginia", "Bailieborough", "Cootehill", "Belturbet"],
+    businessTypes = [
+        {
+            name: "Tourism & Lakes",
+            description: "With 365 lakes, Cavan's tourism businesses can attract anglers and nature lovers online.",
+            features: ["Booking systems", "Activity calendars", "Photo galleries", "Weather widgets"]
+        },
+        {
+            name: "Agriculture & Food",
+            description: "Cavan's strong agricultural sector can expand with farm shops and food producers online.",
+            features: ["Product catalogs", "Delivery options", "Seasonal updates", "Farm stories"]
+        },
+        {
+            name: "Local Services",
+            description: "From Cavan town to rural villages, local services can reach more customers.",
+            features: ["Service areas", "Online quotes", "Appointment booking", "Customer reviews"]
+        },
+        {
+            name: "Retail & Crafts",
+            description: "Cavan's craft makers and retailers can sell beyond the county borders.",
+            features: ["E-commerce", "Craft stories", "Gift options", "Nationwide shipping"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "€2.1bn",
+            title: "Border Economy",
+            description: "The border region economy offers cross-border opportunities.",
+            outcome: "Reach NI and ROI markets"
+        },
+        {
+            metric: "365",
+            title: "Lakes County",
+            description: "Cavan's lakes attract thousands of tourists annually.",
+            outcome: "Tourism potential"
+        },
+        {
+            metric: "Rural",
+            title: "Digital Need",
+            description: "Rural customers increasingly shop and book online.",
+            outcome: "Essential online presence"
+        }
+    ]
+) }}
+
+{% endblock %}

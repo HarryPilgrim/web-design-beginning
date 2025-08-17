@@ -1,0 +1,848 @@
+/* Light Mode (Default) */
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .location-hero-section {
+        padding: calc(100 / 16 * 1rem) 0 calc(120 / 16 * 1rem);
+        background: #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .location-hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 20%, rgba(0, 200, 0, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .location-hero-content {
+        width: 100%;
+        max-width: calc(1280 / 16 * 1rem);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .location-hero-title {
+        font-size: calc(39 / 16 * 1rem);
+        font-weight: 900;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0 auto calc(24 / 16 * 1rem);
+        color: #1a1a1a;
+        position: relative;
+    }
+
+    .location-hero-subtitle {
+        font-size: calc(20 / 16 * 1rem);
+        line-height: 1.5;
+        text-align: center;
+        width: 100%;
+        max-width: calc(650 / 16 * 1rem);
+        margin: 0 auto calc(40 / 16 * 1rem);
+        color: #333333;
+    }
+
+    .location-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(140 / 16 * 1rem), 1fr));
+        gap: calc(32 / 16 * 1rem);
+        width: 100%;
+        max-width: calc(600 / 16 * 1rem);
+        margin: 0 auto calc(48 / 16 * 1rem);
+    }
+
+    .location-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: calc(24 / 16 * 1rem);
+        background: #f8f8f8;
+        border: 1px solid #e0e0e0;
+        border-radius: calc(12 / 16 * 1rem);
+        backdrop-filter: blur(10px);
+    }
+
+    .location-stat-number {
+        font-size: calc(32 / 16 * 1rem);
+        font-weight: 800;
+        color: #00cc00;
+        margin-bottom: calc(8 / 16 * 1rem);
+    }
+
+    .location-stat-text {
+        font-size: calc(14 / 16 * 1rem);
+        color: #666666;
+        text-align: center;
+    }
+
+    .location-cta-buttons {
+        display: flex;
+        gap: calc(16 / 16 * 1rem);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Services Section */
+    .location-services-section {
+        padding: calc(100 / 16 * 1rem) 0;
+        background: #f8f8f8;
+        position: relative;
+    }
+
+    .location-services-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, rgba(0, 200, 0, 0.1), transparent);
+        transform: translateX(-50%);
+    }
+
+    .location-section-header {
+        text-align: center;
+        margin-bottom: calc(80 / 16 * 1rem);
+    }
+
+    .location-topper {
+        font-size: calc(13 / 16 * 1rem);
+        line-height: 1.2;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: .1em;
+        font-weight: 700;
+        color: #00cc00;
+        margin-bottom: calc(4 / 16 * 1rem);
+        display: block;
+    }
+
+    .location-title {
+        font-size: calc(31 / 16 * 1rem);
+        font-weight: 900;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0 auto calc(16 / 16 * 1rem);
+        color: #1a1a1a;
+        position: relative;
+    }
+
+    .location-intro {
+        font-size: calc(16 / 16 * 1rem);
+        line-height: 1.5;
+        text-align: center;
+        width: 100%;
+        max-width: calc(630 / 16 * 1rem);
+        margin: 0 auto;
+        color: #666666;
+    }
+
+    .location-services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(280 / 16 * 1rem), 1fr));
+        gap: calc(40 / 16 * 1rem);
+    }
+
+    .location-service {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: calc(16 / 16 * 1rem);
+        padding: calc(32 / 16 * 1rem);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .location-service:hover {
+        border-color: #00cc00;
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 200, 0, 0.1);
+    }
+
+    .location-icon-wrapper {
+        width: calc(60 / 16 * 1rem);
+        height: calc(60 / 16 * 1rem);
+        margin: 0 auto calc(24 / 16 * 1rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 200, 0, 0.1);
+        border-radius: 50%;
+    }
+
+    .location-icon {
+        width: calc(32 / 16 * 1rem);
+        height: calc(32 / 16 * 1rem);
+    }
+
+    .location-service h3 {
+        font-size: calc(20 / 16 * 1rem);
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: calc(16 / 16 * 1rem);
+    }
+
+    .location-service p {
+        font-size: calc(16 / 16 * 1rem);
+        line-height: 1.5;
+        color: #666666;
+    }
+
+    /* Business Types Section */
+    .location-business-section {
+        padding: calc(100 / 16 * 1rem) 0;
+        background: #ffffff;
+    }
+
+    .location-business-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(300 / 16 * 1rem), 1fr));
+        gap: calc(32 / 16 * 1rem);
+    }
+
+    .location-business-card {
+        background: #f8f8f8;
+        border: 1px solid #e0e0e0;
+        border-radius: calc(12 / 16 * 1rem);
+        padding: calc(32 / 16 * 1rem);
+        transition: all 0.3s ease;
+    }
+
+    .location-business-card:hover {
+        border-color: #00cc00;
+        background: #ffffff;
+    }
+
+    .location-business-card h3 {
+        font-size: calc(18 / 16 * 1rem);
+        font-weight: 700;
+        color: #00cc00;
+        margin-bottom: calc(16 / 16 * 1rem);
+    }
+
+    .location-business-card p {
+        font-size: calc(14 / 16 * 1rem);
+        color: #333333;
+        margin-bottom: calc(20 / 16 * 1rem);
+    }
+
+    .location-business-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .location-business-features li {
+        font-size: calc(12 / 16 * 1rem);
+        color: #666666;
+        margin-bottom: calc(8 / 16 * 1rem);
+        position: relative;
+        padding-left: calc(20 / 16 * 1rem);
+    }
+
+    .location-business-features li::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: #00cc00;
+        font-weight: bold;
+    }
+
+    /* Results Section */
+    .location-results-section {
+        padding: calc(100 / 16 * 1rem) 0;
+        background: #f8f8f8;
+    }
+
+    .location-results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(280 / 16 * 1rem), 1fr));
+        gap: calc(40 / 16 * 1rem);
+    }
+
+    .location-result-card {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: calc(16 / 16 * 1rem);
+        padding: calc(40 / 16 * 1rem);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .location-result-card:hover {
+        transform: translateY(-8px);
+        border-color: #00cc00;
+        box-shadow: 0 20px 40px rgba(0, 200, 0, 0.1);
+    }
+
+    .location-result-metric {
+        font-size: calc(48 / 16 * 1rem);
+        font-weight: 900;
+        color: #00cc00;
+        margin-bottom: calc(16 / 16 * 1rem);
+        line-height: 1;
+    }
+
+    .location-result-card h3 {
+        font-size: calc(18 / 16 * 1rem);
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: calc(16 / 16 * 1rem);
+    }
+
+    .location-result-card p {
+        font-size: calc(14 / 16 * 1rem);
+        color: #666666;
+        margin-bottom: calc(20 / 16 * 1rem);
+    }
+
+    .location-result-outcome {
+        font-size: calc(16 / 16 * 1rem);
+        font-weight: 600;
+        color: #00cc00;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    /* CTA Section */
+    .location-cta-section {
+        padding: calc(100 / 16 * 1rem) 0;
+        background: #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .location-cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, rgba(0, 200, 0, 0.05) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .location-cta-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .location-cta-title {
+        font-size: calc(31 / 16 * 1rem);
+        font-weight: 900;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0 auto calc(24 / 16 * 1rem);
+        color: #1a1a1a;
+    }
+
+    .location-cta-text {
+        font-size: calc(18 / 16 * 1rem);
+        line-height: 1.5;
+        text-align: center;
+        width: 100%;
+        max-width: calc(600 / 16 * 1rem);
+        margin: 0 auto calc(40 / 16 * 1rem);
+        color: #666666;
+    }
+
+    /* Don't modify existing button styles - let the site's main button styles handle them */
+    /* Only add specific green button for location pages */
+    .location-cta-buttons .cs-button-solid.location-button {
+        background-color: #00cc00;
+        color: #ffffff;
+        border: 2px solid #00cc00;
+    }
+
+    .location-cta-buttons .cs-button-solid.location-button:hover {
+        background-color: #00b300;
+        border-color: #00b300;
+        transform: translateY(-2px);
+    }
+
+    .location-cta-buttons .cs-button-transparent {
+        background-color: transparent;
+        color: #00cc00;
+        border: 2px solid #00cc00;
+    }
+
+    .location-cta-buttons .cs-button-transparent:hover {
+        background-color: #00cc00;
+        color: #ffffff;
+        transform: translateY(-2px);
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .location-hero-title {
+        font-size: calc(64 / 16 * 1rem);
+        margin-bottom: calc(32 / 16 * 1rem);
+    }
+
+    .location-hero-subtitle {
+        font-size: calc(22 / 16 * 1rem);
+        margin-bottom: calc(56 / 16 * 1rem);
+    }
+
+    .location-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: calc(40 / 16 * 1rem);
+        margin-bottom: calc(64 / 16 * 1rem);
+    }
+
+    .location-stat {
+        padding: calc(32 / 16 * 1rem);
+    }
+
+    .location-stat-number {
+        font-size: calc(40 / 16 * 1rem);
+        margin-bottom: calc(12 / 16 * 1rem);
+    }
+
+    .location-stat-text {
+        font-size: calc(16 / 16 * 1rem);
+    }
+
+    .location-title {
+        font-size: calc(48 / 16 * 1rem);
+        margin-bottom: calc(24 / 16 * 1rem);
+    }
+
+    .location-intro {
+        font-size: calc(18 / 16 * 1rem);
+    }
+
+    .location-services-grid {
+        gap: calc(60 / 16 * 1rem);
+    }
+
+    .location-service {
+        padding: calc(48 / 16 * 1rem);
+    }
+
+    .location-service h3 {
+        font-size: calc(24 / 16 * 1rem);
+        margin-bottom: calc(20 / 16 * 1rem);
+    }
+
+    .location-service p {
+        font-size: calc(18 / 16 * 1rem);
+    }
+
+    .location-business-grid {
+        gap: calc(48 / 16 * 1rem);
+    }
+
+    .location-business-card {
+        padding: calc(40 / 16 * 1rem);
+    }
+
+    .location-business-card h3 {
+        font-size: calc(20 / 16 * 1rem);
+        margin-bottom: calc(20 / 16 * 1rem);
+    }
+
+    .location-business-card p {
+        font-size: calc(16 / 16 * 1rem);
+        margin-bottom: calc(24 / 16 * 1rem);
+    }
+
+    .location-business-features li {
+        font-size: calc(14 / 16 * 1rem);
+        margin-bottom: calc(12 / 16 * 1rem);
+    }
+
+    .location-results-grid {
+        gap: calc(60 / 16 * 1rem);
+    }
+
+    .location-result-card {
+        padding: calc(56 / 16 * 1rem);
+    }
+
+    .location-result-metric {
+        font-size: calc(64 / 16 * 1rem);
+        margin-bottom: calc(20 / 16 * 1rem);
+    }
+
+    .location-result-card h3 {
+        font-size: calc(22 / 16 * 1rem);
+        margin-bottom: calc(20 / 16 * 1rem);
+    }
+
+    .location-result-card p {
+        font-size: calc(16 / 16 * 1rem);
+        margin-bottom: calc(24 / 16 * 1rem);
+    }
+
+    .location-result-outcome {
+        font-size: calc(18 / 16 * 1rem);
+    }
+
+    .location-cta-title {
+        font-size: calc(48 / 16 * 1rem);
+        margin-bottom: calc(32 / 16 * 1rem);
+    }
+
+    .location-cta-text {
+        font-size: calc(20 / 16 * 1rem);
+        margin-bottom: calc(56 / 16 * 1rem);
+    }
+
+    .location-cta-buttons {
+        gap: calc(24 / 16 * 1rem);
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .location-hero-section {
+        padding: calc(150 / 16 * 1rem) 0 calc(180 / 16 * 1rem);
+    }
+
+    .location-hero-title {
+        font-size: calc(72 / 16 * 1rem);
+    }
+
+    .location-services-section,
+    .location-business-section,
+    .location-results-section,
+    .location-cta-section {
+        padding: calc(150 / 16 * 1rem) 0;
+    }
+
+    .location-title {
+        font-size: calc(56 / 16 * 1rem);
+    }
+
+    .location-services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .location-business-grid {
+        grid-template-columns: repeat(auto-fit, minmax(calc(350 / 16 * 1rem), 1fr));
+    }
+
+    .location-results-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    .location-hero-title {
+        font-size: calc(84 / 16 * 1rem);
+    }
+
+    .location-title {
+        font-size: calc(64 / 16 * 1rem);
+    }
+}
+
+/*-- -------------------------- -->
+<---        Dark Mode           -->
+<--- -------------------------- -*/
+
+body.dark-mode {
+    /* Dark mode - green text on dark background */
+    .location-hero-section {
+        background: #0a0a0a;
+    }
+
+    .location-hero-section::before {
+        background: radial-gradient(circle at 50% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 50%);
+    }
+
+    .location-hero-title {
+        color: #00ff00;
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    }
+
+    .location-hero-subtitle {
+        color: #ffffff;
+        opacity: 0.9;
+    }
+
+    .location-stat {
+        background: rgba(0, 255, 0, 0.05);
+        border-color: rgba(0, 255, 0, 0.2);
+    }
+
+    .location-stat-number {
+        color: #00ff00;
+        text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+    }
+
+    .location-stat-text {
+        color: #ffffff;
+        opacity: 0.8;
+    }
+
+    /* Services Section Dark */
+    .location-services-section {
+        background: #111111;
+    }
+
+    .location-services-section::before {
+        background: linear-gradient(to bottom, transparent, rgba(0, 255, 0, 0.3), transparent);
+    }
+
+    .location-topper {
+        color: #00ff00;
+    }
+
+    .location-title {
+        color: #ffffff;
+    }
+
+    .location-intro {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .location-service {
+        background: rgba(0, 255, 0, 0.03);
+        border-color: rgba(0, 255, 0, 0.1);
+    }
+
+    .location-service:hover {
+        border-color: rgba(0, 255, 0, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 255, 0, 0.1);
+    }
+
+    .location-icon-wrapper {
+        background: rgba(0, 255, 0, 0.1);
+    }
+
+    .location-service h3 {
+        color: #00ff00;
+    }
+
+    .location-service p {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Business Section Dark */
+    .location-business-section {
+        background: #0a0a0a;
+    }
+
+    .location-business-card {
+        background: rgba(0, 255, 0, 0.02);
+        border-color: rgba(0, 255, 0, 0.1);
+    }
+
+    .location-business-card:hover {
+        border-color: rgba(0, 255, 0, 0.2);
+        background: rgba(0, 255, 0, 0.05);
+    }
+
+    .location-business-card h3 {
+        color: #00ff00;
+    }
+
+    .location-business-card p {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .location-business-features li {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .location-business-features li::before {
+        color: #00ff00;
+    }
+
+    /* Results Section Dark */
+    .location-results-section {
+        background: #111111;
+    }
+
+    .location-result-card {
+        background: rgba(0, 255, 0, 0.03);
+        border-color: rgba(0, 255, 0, 0.15);
+    }
+
+    .location-result-card:hover {
+        border-color: rgba(0, 255, 0, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 255, 0, 0.1);
+    }
+
+    .location-result-metric {
+        color: #00ff00;
+        text-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+        animation: matrixGlow 3s ease-in-out infinite;
+    }
+
+    .location-result-card h3 {
+        color: #ffffff;
+    }
+
+    .location-result-card p {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .location-result-outcome {
+        color: #00ff00;
+    }
+
+    /* CTA Section Dark */
+    .location-cta-section {
+        background: #0a0a0a;
+    }
+
+    .location-cta-section::before {
+        background: radial-gradient(ellipse at center, rgba(0, 255, 0, 0.08) 0%, transparent 70%);
+    }
+
+    .location-cta-title {
+        color: #00ff00;
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        animation: matrixGlow 3s ease-in-out infinite;
+    }
+
+    .location-cta-text {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Dark mode button overrides */
+    .location-cta-buttons .cs-button-solid.location-button {
+        background-color: #00ff00;
+        color: #000000;
+        border: 2px solid #00ff00;
+        box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+    }
+
+    .location-cta-buttons .cs-button-solid.location-button:hover {
+        background-color: transparent;
+        color: #00ff00;
+        box-shadow: 0 6px 20px rgba(0, 255, 0, 0.4);
+    }
+
+    .location-cta-buttons .cs-button-transparent {
+        background-color: transparent;
+        color: #00ff00;
+        border: 2px solid #00ff00;
+    }
+
+    .location-cta-buttons .cs-button-transparent:hover {
+        background-color: #00ff00;
+        color: #000000;
+        box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+    }
+}
+
+/* Animation Classes */
+@keyframes matrixGlow {
+    0%, 100% { 
+        text-shadow: 0 0 5px rgba(0, 255, 0, 0.3); 
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4); 
+    }
+}
+
+/* Only apply glow animation in dark mode */
+body.dark-mode {
+    .location-hero-title,
+    .location-result-metric {
+        animation: matrixGlow 3s ease-in-out infinite;
+    }
+}
+
+/* Scrollbar Styling - only in dark mode */
+body.dark-mode {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #0a0a0a;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 255, 0, 0.3);
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 255, 0, 0.5);
+    }
+}
+
+/* Selection Styling */
+::selection {
+    background: rgba(0, 200, 0, 0.2);
+    color: inherit;
+}
+
+body.dark-mode ::selection {
+    background: rgba(0, 255, 0, 0.3);
+    color: #ffffff;
+}
+
+/* Ensure proper contrast for accessibility */
+@media (prefers-contrast: high) {
+    .location-stat-number,
+    .location-topper,
+    .location-business-card h3,
+    .location-result-metric,
+    .location-result-outcome {
+        color: #00b300; /* Darker green for better contrast */
+    }
+
+    body.dark-mode {
+        .location-stat-number,
+        .location-topper,
+        .location-service h3,
+        .location-business-card h3,
+        .location-result-metric,
+        .location-result-outcome,
+        .location-cta-title {
+            color: #39ff39; /* Brighter green for better contrast in dark mode */
+        }
+    }
+}
+
+/* Print styles */
+@media print {
+    .location-hero-section::before,
+    .location-services-section::before,
+    .location-cta-section::before {
+        display: none;
+    }
+
+    .location-hero-title,
+    .location-title {
+        color: #000000 !important;
+        text-shadow: none !important;
+    }
+
+    .location-stat-number,
+    .location-topper,
+    .location-business-card h3,
+    .location-result-metric,
+    .location-result-outcome {
+        color: #000000 !important;
+        text-shadow: none !important;
+    }
+
+    .location-service,
+    .location-business-card,
+    .location-result-card,
+    .location-stat {
+        border: 1px solid #cccccc !important;
+        box-shadow: none !important;
+    }
+}

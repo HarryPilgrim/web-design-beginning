@@ -100,3 +100,31 @@ document.addEventListener("keydown", (event) => {
         toggleMenu();
     }
 });
+
+// Add to your existing JavaScript file
+document.addEventListener('DOMContentLoaded', function() {
+    // Only on mobile
+    if (window.innerWidth <= 1023) {
+        const countryLinks = document.querySelectorAll('.cs-country-link');
+        
+        countryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const parentLi = this.closest('.cs-nested-dropdown');
+                const wasActive = parentLi.classList.contains('cs-active');
+                
+                // Close all other nested dropdowns
+                document.querySelectorAll('.cs-nested-dropdown').forEach(item => {
+                    item.classList.remove('cs-active');
+                });
+                
+                // Toggle current
+                if (!wasActive) {
+                    parentLi.classList.add('cs-active');
+                }
+            });
+        });
+    }
+});

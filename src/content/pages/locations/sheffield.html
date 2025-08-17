@@ -1,0 +1,65 @@
+---
+title: "Web Design Sheffield | Professional Website Design Services"
+description: "Professional web design services in Sheffield, South Yorkshire. Help your Steel City business forge a strong online presence."
+permalink: "/sheffield/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Sheffield",
+    county = "South Yorkshire",
+    region = "Yorkshire",
+    nearbyAreas = ["Rotherham", "Barnsley", "Chesterfield", "Doncaster"],
+    businessTypes = [
+        {
+            name: "Manufacturing & Engineering",
+            description: "Sheffield's industrial heritage continues. Showcase your capabilities online.",
+            features: ["Product catalogs", "Specification sheets", "Quote systems", "Case studies"]
+        },
+        {
+            name: "Outdoor & Sports",
+            description: "The Outdoor City's businesses can reach adventure seekers nationwide.",
+            features: ["E-commerce", "Booking systems", "Event calendars", "Blog integration"]
+        },
+        {
+            name: "Creative Industries",
+            description: "Sheffield's cultural quarter is thriving. Stand out with creative web design.",
+            features: ["Portfolio galleries", "Video integration", "Event listings", "Social feeds"]
+        },
+        {
+            name: "Health & Education",
+            description: "With two universities and teaching hospitals, serve this large sector.",
+            features: ["Resource portals", "Appointment booking", "Course information", "Student areas"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "60,000",
+            title: "Students",
+            description: "Sheffield's student population is digitally native and shops online.",
+            outcome: "Tech-savvy audience"
+        },
+        {
+            metric: "Green",
+            title: "City Focus",
+            description: "Sheffield's green reputation attracts eco-conscious consumers.",
+            outcome: "Sustainability sells"
+        },
+        {
+            metric: "£1.1bn",
+            title: "Digital Growth",
+            description: "Sheffield's digital sector is rapidly expanding.",
+            outcome: "Join the growth"
+        }
+    ]
+) }}
+
+{% endblock %}

@@ -719,8 +719,175 @@ html body.dark-mode .cs-logo img {
 <---     Navigation Dropdown    -->
 <--- -------------------------- -*/
 
+/* Nested Dropdown Styles */
+.cs-nested-dropdown {
+    position: relative;
+}
+
+.cs-country-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: calc(12 / 16 * 1rem) calc(24 / 16 * 1rem);
+    text-decoration: none;
+    color: var(--bodyTextColor);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cs-country-link:hover {
+    background-color: #f0f0f0;
+    color: var(--primary);
+}
+
+.cs-drop-icon-nested {
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+    margin-left: auto;
+    opacity: 1; /* Changed from 0.6 to 1 */
+    filter: none; /* Remove any blur */
+    width: 12px;
+    height: 12px;
+}
+
+/* Make sure the dropdown is above other elements */
+.cs-drop-ul {
+    overflow: visible !important; /* Add this */
+    z-index: 1000;
+}
+
+.cs-drop-li {
+    overflow: visible !important; /* Add this */
+}
+
+.cs-nested-dropdown {
+    position: relative;
+    overflow: visible !important; /* Add this */
+}
+
+.cs-nested-dropdown:hover .cs-drop-icon-nested {
+    transform: rotate(0deg);
+}
+
+.cs-nested-ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: calc(200 / 16 * 1rem);
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: calc(8 / 16 * 1rem);
+    box-shadow: 0 calc(10 / 16 * 1rem) calc(30 / 16 * 1rem) rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001; /* Higher than parent */
+    list-style: none;
+    padding: calc(8 / 16 * 1rem) 0;
+    margin: 0;
+    pointer-events: none; /* Add this */
+}
+
+.cs-nested-dropdown:hover .cs-nested-ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto; /* Add this */
+}
+
+/* Ensure the parent dropdown stays open */
+.cs-dropdown:hover .cs-drop-ul,
+.cs-drop-ul:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.cs-nested-li {
+    list-style: none;
+}
+
+.cs-nested-link {
+    display: block;
+    padding: calc(10 / 16 * 1rem) calc(24 / 16 * 1rem);
+    color: var(--bodyTextColor);
+    text-decoration: none;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.cs-nested-link:hover {
+    background-color: #f0f0f0;
+    color: var(--primary);
+    padding-left: calc(28 / 16 * 1rem);
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 63.9375rem) {
+    .cs-nested-ul {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding-left: calc(20 / 16 * 1rem);
+        display: none;
+    }
+    
+    .cs-nested-dropdown.cs-active .cs-nested-ul {
+        display: block;
+    }
+    
+    .cs-country-link {
+        position: relative;
+    }
+    
+    .cs-drop-icon-nested {
+        position: absolute;
+        right: calc(24 / 16 * 1rem);
+    }
+    
+    .cs-nested-dropdown.cs-active .cs-drop-icon-nested {
+        transform: rotate(0deg);
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    .cs-country-link {
+        color: var(--bodyTextColorWhite);
+    }
+    
+    .cs-country-link:hover {
+        background-color: rgba(0, 255, 0, 0.1);
+        color: #00ff00;
+    }
+    
+    .cs-nested-ul {
+        background: var(--dark);
+        border-color: rgba(0, 255, 0, 0.2);
+        box-shadow: 0 calc(10 / 16 * 1rem) calc(30 / 16 * 1rem) rgba(0, 255, 0, 0.1);
+    }
+    
+    .cs-nested-link {
+        color: var(--bodyTextColorWhite);
+    }
+    
+    .cs-nested-link:hover {
+        background-color: rgba(0, 255, 0, 0.1);
+        color: #00ff00;
+    }
+}
+
+
 /* Mobile - 1023.5px */
 @media only screen and (max-width: 1023.5px) {
+
+    
     #cs-navigation {
         .cs-dropdown {
             color: var(--bodyTextColorWhite);

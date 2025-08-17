@@ -1,0 +1,65 @@
+---
+title: "Web Design Liverpool | Professional Website Design Services"
+description: "Professional web design services in Liverpool, Merseyside. Help your Scouse business make waves online with professional web design."
+permalink: "/liverpool/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Liverpool",
+    county = "Merseyside",
+    region = "North West England",
+    nearbyAreas = ["Wirral", "St Helens", "Bootle", "Southport"],
+    businessTypes = [
+        {
+            name: "Music & Entertainment",
+            description: "From the Cavern Club to the Echo Arena, Liverpool's music scene needs digital presence.",
+            features: ["Event listings", "Ticket integration", "Media galleries", "Streaming options"]
+        },
+        {
+            name: "Maritime & Tourism",
+            description: "Albert Dock to Beatles Story - capture Liverpool's 60 million annual visitors.",
+            features: ["Booking systems", "Virtual tours", "Multi-language", "Interactive guides"]
+        },
+        {
+            name: "Football & Sports",
+            description: "In a football city, sports businesses can score online.",
+            features: ["Match calendars", "Merchandise shops", "Membership areas", "News sections"]
+        },
+        {
+            name: "Independent Business",
+            description: "Bold Street to Baltic Triangle - Liverpool's independents can thrive online.",
+            features: ["E-commerce", "Local SEO", "Social commerce", "Email marketing"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "60M",
+            title: "Annual Visitors",
+            description: "Liverpool's tourism is massive - reach them online.",
+            outcome: "Tourist goldmine"
+        },
+        {
+            metric: "Cultural",
+            title: "Capital Status",
+            description: "Liverpool's cultural reputation attracts global attention.",
+            outcome: "International reach"
+        },
+        {
+            metric: "£4.9bn",
+            title: "Visitor Economy",
+            description: "Huge visitor spending to tap into.",
+            outcome: "Revenue opportunity"
+        }
+    ]
+) }}
+
+{% endblock %}

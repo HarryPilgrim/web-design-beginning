@@ -1,0 +1,65 @@
+---
+title: "Web Design London | Professional Website Design Services"
+description: "Professional web design services in London. Help your London business stand out in the world's most competitive digital market."
+permalink: "/london/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "London",
+    county = "Greater London",
+    region = "Greater London",
+    nearbyAreas = ["Westminster", "Camden", "Greenwich", "Richmond"],
+    businessTypes = [
+        {
+            name: "Professional Services",
+            description: "From the City to Canary Wharf, London businesses need world-class websites.",
+            features: ["Corporate design", "Multi-location", "Integration ready", "Compliance focused"]
+        },
+        {
+            name: "Hospitality & Tourism",
+            description: "London attracts 30 million visitors annually. Capture this market.",
+            features: ["Booking engines", "Concierge services", "Virtual tours", "Multi-currency"]
+        },
+        {
+            name: "Retail & Fashion",
+            description: "From Oxford Street to Shoreditch, retail needs strong online presence.",
+            features: ["E-commerce", "Virtual shopping", "Same-day delivery", "International shipping"]
+        },
+        {
+            name: "Startups & Tech",
+            description: "Join London's tech scene with cutting-edge web presence.",
+            features: ["Scalable platforms", "API development", "Cloud solutions", "Growth-ready"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "9M",
+            title: "Population",
+            description: "London's massive population is highly connected.",
+            outcome: "Enormous market"
+        },
+        {
+            metric: "Global",
+            title: "Business Hub",
+            description: "London businesses can reach worldwide audiences.",
+            outcome: "International potential"
+        },
+        {
+            metric: "96%",
+            title: "Internet Usage",
+            description: "Nearly all Londoners are active online.",
+            outcome: "Digital-first market"
+        }
+    ]
+) }}
+
+{% endblock %}

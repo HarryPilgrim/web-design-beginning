@@ -1,0 +1,65 @@
+---
+title: "Web Design Newcastle | Professional Website Design Services"
+description: "Professional web design services in Newcastle upon Tyne. Help your Tyneside business thrive online with a modern, conversion-focused website."
+permalink: "/newcastle/web-design/"
+---
+
+{% extends "layouts/base.html" %}
+{% import "components/location-page-macro.njk" as locationMacro %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/location-page.css">
+{% endblock %}
+
+{% block body %}
+
+{{ locationMacro.locationPage(
+    city = "Newcastle",
+    county = "Tyne and Wear",
+    region = "North East England",
+    nearbyAreas = ["Gateshead", "North Shields", "South Shields", "Wallsend"],
+    businessTypes = [
+        {
+            name: "Nightlife & Entertainment",
+            description: "Newcastle's famous nightlife venues can attract more customers with engaging websites.",
+            features: ["Event calendars", "Table bookings", "Gallery sections", "Social media integration"]
+        },
+        {
+            name: "Tech Startups",
+            description: "Join Newcastle's thriving tech scene with a website that stands out from the crowd.",
+            features: ["Modern design", "API integrations", "Scalable architecture", "Performance optimization"]
+        },
+        {
+            name: "Retail & Shopping",
+            description: "From Eldon Square to Grainger Market, Newcastle retailers can expand their reach online.",
+            features: ["Online shopping", "Store locators", "Product catalogs", "Customer accounts"]
+        },
+        {
+            name: "Health & Wellness",
+            description: "Newcastle's health businesses can streamline bookings and build trust online.",
+            features: ["Appointment booking", "Service information", "Practitioner profiles", "Patient resources"]
+        }
+    ],
+    possibilities = [
+        {
+            metric: "89%",
+            title: "Research Online First",
+            description: "Nearly 9 in 10 Geordies check businesses online before visiting.",
+            outcome: "Your website is your first impression"
+        },
+        {
+            metric: "5x",
+            title: "ROI Potential",
+            description: "Businesses with professional websites typically see 5x return on investment.",
+            outcome: "Smart investment for growth"
+        },
+        {
+            metric: "Local",
+            title: "Search Priority",
+            description: "Google prioritizes local businesses with optimized websites.",
+            outcome: "Beat your competition"
+        }
+    ]
+) }}
+
+{% endblock %}
